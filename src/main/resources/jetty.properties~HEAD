@@ -1,4 +1,0 @@
-port=8082
-retain_days=10
-log_path=logs/yyyy_mm_dd.request.log
-
