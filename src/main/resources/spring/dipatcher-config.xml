@@ -2,16 +2,28 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:jpa="http://www.springframework.org/schema/data/jpa"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
+       
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
          http://www.springframework.org/schema/context/spring-context.xsd
+         http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
          http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
          http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
 
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
+            <bean class="org.springframework.http.converter.ResourceHttpMessageConverter"/>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+    
     <context:property-placeholder location="classpath:*.properties"/>
     <context:annotation-config/>
     <context:component-scan base-package="ru.originald.controller"/>
@@ -55,26 +67,28 @@
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
-    <bean id="usersDao" class="ru.originald.dao.UserDaoImpl">
+    <!--    <bean id="usersDao" class="ru.originald.dao.UserDaoImpl">
         <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
-    </bean>
+    </bean>-->
 
     <bean id="hibernate4AnnotatedSessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="annotatedClasses">
-        <list>
-            <value>ru.originald.model.User</value>
-        </list>
+            <list>
+                <value>ru.originald.model.User</value>
+            </list>
         </property>
-    </bean>
-    <bean id="usersService" class="ru.originald.service.UserServiceImpl">
-        <property name="userDao" ref="usersDao"/>
+        <!--</bean>-->
+        <!--    <bean id="usersService" class="ru.originald.service.UserServiceImpl">
+            <property name="userDao" ref="usersDao"/>
+        -->
     </bean>
 
-    <bean id="hibernateTransactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+    <!--    <bean id="hibernateTransactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
         <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
-    </bean>
-    <tx:annotation-driven/>
+    </bean>-->
+    
+    <!--<tx:annotation-driven/>-->
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
 

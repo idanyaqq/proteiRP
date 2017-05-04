@@ -17,11 +17,11 @@ import ru.originald.service.UserService;
  */
 
 @RestController
-@EnableWebMvc
+//@EnableWebMvc
 @RequestMapping("/users")
 public class UserController {
 
-    @Qualifier("usersService")
+//    @Qualifier("usersService")
     @Autowired
     private UserService userService;
 
