@@ -1,0 +1,530 @@
+11:01:21.868 [main]                      INFO  o.e.j.util.log - initialized - Logging initialized @596ms 
+11:01:22.011 [main]                      INFO  s.WebServer - createWebAppContext - Running in debug environment 
+11:01:22.041 [main]                      INFO  o.e.j.s.Server - doStart - jetty-9.3.6.v20151106 
+11:01:22.209 [main]                      INFO  o.e.j.w.StandardDescriptorProcessor - visitServlet - NO JSP Support for /, did not find org.eclipse.jetty.jsp.JettyJspServlet 
+11:01:22.372 [main]                      INFO  / - log - Initializing Spring FrameworkServlet 'dispatcher-config' 
+11:01:22.373 [main]                      INFO  o.s.w.s.DispatcherServlet - initServletBean - FrameworkServlet 'dispatcher-config': initialization started 
+11:01:22.398 [main]                      INFO  o.s.w.c.s.XmlWebApplicationContext - prepareRefresh - Refreshing WebApplicationContext for namespace 'dispatcher-config-servlet': startup date [Thu May 04 11:01:22 MSK 2017]; root of context hierarchy 
+11:01:22.443 [main]                      INFO  o.s.b.f.x.XmlBeanDefinitionReader - loadBeanDefinitions - Loading XML bean definitions from ServletContext resource [/src/main/resources/spring/dipatcher-config.xml] 
+11:01:22.450 [main]                      ERROR o.s.w.s.DispatcherServlet - initServletBean - Context initialization failed 
+org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from ServletContext resource [/src/main/resources/spring/dipatcher-config.xml]; nested exception is java.io.FileNotFoundException: Could not open ServletContext resource [/src/main/resources/spring/dipatcher-config.xml]
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:344) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:188) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:125) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:94) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:129) ~[spring-context-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:613) ~[spring-context-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:514) ~[spring-context-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:668) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:634) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:682) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:553) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:494) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:138) [spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at javax.servlet.GenericServlet.init(GenericServlet.java:244) [javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:626) [jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.servlet.ServletHolder.initialize(ServletHolder.java:405) [jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:875) [jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:346) [jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1379) [jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1341) [jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:772) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:259) [jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:517) [jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.server.Server.start(Server.java:405) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:106) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.server.Server.doStart(Server.java:372) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at server.WebServer.start(WebServer.java:42) [classes/:na]
+	at server.App.start(App.java:20) [classes/:na]
+	at server.App.main(App.java:11) [classes/:na]
+Caused by: java.io.FileNotFoundException: Could not open ServletContext resource [/src/main/resources/spring/dipatcher-config.xml]
+	at org.springframework.web.context.support.ServletContextResource.getInputStream(ServletContextResource.java:141) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:330) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	... 39 common frames omitted
+11:01:22.452 [main]                      WARN  / - log - unavailable 
+org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from ServletContext resource [/src/main/resources/spring/dipatcher-config.xml]; nested exception is java.io.FileNotFoundException: Could not open ServletContext resource [/src/main/resources/spring/dipatcher-config.xml]
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:344) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:188) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:125) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:94) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:129) ~[spring-context-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:613) ~[spring-context-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:514) ~[spring-context-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:668) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:634) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:682) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:553) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:494) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:138) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at javax.servlet.GenericServlet.init(GenericServlet.java:244) ~[javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:626) [jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.servlet.ServletHolder.initialize(ServletHolder.java:405) [jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:875) [jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:346) [jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1379) [jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1341) [jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:772) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:259) [jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:517) [jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.server.Server.start(Server.java:405) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:106) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.server.Server.doStart(Server.java:372) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at server.WebServer.start(WebServer.java:42) [classes/:na]
+	at server.App.start(App.java:20) [classes/:na]
+	at server.App.main(App.java:11) [classes/:na]
+Caused by: java.io.FileNotFoundException: Could not open ServletContext resource [/src/main/resources/spring/dipatcher-config.xml]
+	at org.springframework.web.context.support.ServletContextResource.getInputStream(ServletContextResource.java:141) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:330) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	... 39 common frames omitted
+11:01:22.461 [main]                      WARN  o.e.j.w.WebAppContext - doStart - Failed startup of context o.e.j.w.WebAppContext@2e4b8173{/,[file:///home/redin/myProjects/proteiPRver2/proteiRP/src/main/webapp/, file:///home/redin/myProjects/proteiPRver2/proteiRP/target/classes/],STARTING}{file:/home/redin/myProjects/proteiPRver2/proteiRP/target/classes/} 
+javax.servlet.ServletException: dispatcher-config@a130d928==org.springframework.web.servlet.DispatcherServlet,1,false
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:647) ~[jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.servlet.ServletHolder.initialize(ServletHolder.java:405) ~[jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:875) ~[jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:346) ~[jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1379) ~[jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1341) ~[jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:772) ~[jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:259) ~[jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:517) ~[jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.server.Server.start(Server.java:405) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:106) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.server.Server.doStart(Server.java:372) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at server.WebServer.start(WebServer.java:42) [classes/:na]
+	at server.App.start(App.java:20) [classes/:na]
+	at server.App.main(App.java:11) [classes/:na]
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from ServletContext resource [/src/main/resources/spring/dipatcher-config.xml]; nested exception is java.io.FileNotFoundException: Could not open ServletContext resource [/src/main/resources/spring/dipatcher-config.xml]
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:344) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:188) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:125) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:94) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:129) ~[spring-context-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:613) ~[spring-context-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:514) ~[spring-context-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:668) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:634) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:682) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:553) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:494) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:138) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at javax.servlet.GenericServlet.init(GenericServlet.java:244) ~[javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:626) ~[jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
+	... 22 common frames omitted
+Caused by: java.io.FileNotFoundException: Could not open ServletContext resource [/src/main/resources/spring/dipatcher-config.xml]
+	at org.springframework.web.context.support.ServletContextResource.getInputStream(ServletContextResource.java:141) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:330) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	... 39 common frames omitted
+11:01:22.465 [main]                      INFO  o.e.j.s.AbstractNCSARequestLog - doStart - Opened /home/redin/myProjects/proteiPRver2/proteiRP/logs/2017_05_04.request.log 
+11:01:22.508 [main]                      INFO  o.e.j.s.ServerConnector - doStart - Started ServerConnector@1139b2f3{HTTP/1.1,[http/1.1]}{0.0.0.0:8082} 
+11:01:22.509 [main]                      INFO  o.e.j.s.Server - doStart - Started @1244ms 
+11:02:02.463 [Thread-0]                  INFO  o.e.j.s.ServerConnector - doStop - Stopped ServerConnector@1139b2f3{HTTP/1.1,[http/1.1]}{0.0.0.0:8082} 
+11:02:02.467 [Thread-0]                  INFO  o.e.j.s.h.ContextHandler - doStop - Stopped o.e.j.w.WebAppContext@2e4b8173{/,[file:///home/redin/myProjects/proteiPRver2/proteiRP/src/main/webapp/, file:///home/redin/myProjects/proteiPRver2/proteiRP/target/classes/],UNAVAILABLE}{file:/home/redin/myProjects/proteiPRver2/proteiRP/target/classes/} 
+11:02:04.882 [main]                      INFO  o.e.j.util.log - initialized - Logging initialized @600ms 
+11:02:05.015 [main]                      INFO  s.WebServer - createWebAppContext - Running in debug environment 
+11:02:05.025 [main]                      INFO  o.e.j.s.Server - doStart - jetty-9.3.6.v20151106 
+11:02:05.197 [main]                      INFO  o.e.j.w.StandardDescriptorProcessor - visitServlet - NO JSP Support for /, did not find org.eclipse.jetty.jsp.JettyJspServlet 
+11:02:05.359 [main]                      INFO  / - log - Initializing Spring FrameworkServlet 'dispatcher-config' 
+11:02:05.359 [main]                      INFO  o.s.w.s.DispatcherServlet - initServletBean - FrameworkServlet 'dispatcher-config': initialization started 
+11:02:05.384 [main]                      INFO  o.s.w.c.s.XmlWebApplicationContext - prepareRefresh - Refreshing WebApplicationContext for namespace 'dispatcher-config-servlet': startup date [Thu May 04 11:02:05 MSK 2017]; root of context hierarchy 
+11:02:05.448 [main]                      INFO  o.s.b.f.x.XmlBeanDefinitionReader - loadBeanDefinitions - Loading XML bean definitions from URL [file:/home/redin/myProjects/proteiPRver2/proteiRP/target/classes/spring/dipatcher-config.xml] 
+11:02:06.194 [main]                      INFO  o.s.b.f.s.DefaultListableBeanFactory - registerBeanDefinition - Overriding bean definition for bean 'mvcContentNegotiationManager' with a different definition: replacing [Root bean: class [org.springframework.web.accept.ContentNegotiationManagerFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration; factoryMethodName=mvcContentNegotiationManager; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/web/servlet/config/annotation/DelegatingWebMvcConfiguration.class]] 
+11:02:06.196 [main]                      INFO  o.s.c.a.ConfigurationClassBeanDefinitionReader - isOverriddenByExistingDefinition - Skipping bean definition for [BeanMethod:name=mvcUriComponentsContributor,declaringClass=org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport]: a definition for bean 'mvcUriComponentsContributor' already exists. This top-level bean definition is considered as an override. 
+11:02:07.223 [main]                      INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - createNativeEntityManagerFactory - Building JPA container EntityManagerFactory for persistence unit 'default' 
+11:02:07.258 [main]                      INFO  o.h.j.i.u.LogHelper - logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...] 
+11:02:07.366 [main]                      INFO  o.h.Version - logVersion - HHH000412: Hibernate Core {4.3.11.Final} 
+11:02:07.369 [main]                      INFO  o.h.c.Environment - <clinit> - HHH000206: hibernate.properties not found 
+11:02:07.371 [main]                      INFO  o.h.c.Environment - buildBytecodeProvider - HHH000021: Bytecode provider name : javassist 
+11:02:07.659 [main]                      INFO  o.h.a.c.Version - <clinit> - HCANN000001: Hibernate Commons Annotations {4.0.5.Final} 
+11:02:07.925 [main]                      INFO  o.h.d.Dialect - <init> - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect 
+11:02:07.933 [main]                      INFO  o.h.e.j.i.LobCreatorBuilder - useContextualLobCreation - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException 
+11:02:08.067 [main]                      INFO  o.h.h.i.a.ASTQueryTranslatorFactory - <init> - HHH000397: Using ASTQueryTranslatorFactory 
+11:02:08.348 [main]                      INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+11:02:08.609 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users/{id}],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> controller.UserController.getStatus(java.lang.Integer,boolean,org.springframework.web.util.UriComponentsBuilder) 
+11:02:08.611 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> controller.UserController.saveUser(model.User,org.springframework.web.util.UriComponentsBuilder) 
+11:02:08.612 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<model.User> controller.UserController.getUserInfo(int) throws java.lang.Exception 
+11:02:08.983 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - initControllerAdviceCache - Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-config-servlet': startup date [Thu May 04 11:02:05 MSK 2017]; root of context hierarchy 
+11:02:09.042 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - initControllerAdviceCache - Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-config-servlet': startup date [Thu May 04 11:02:05 MSK 2017]; root of context hierarchy 
+11:02:09.145 [main]                      INFO  o.h.d.Dialect - <init> - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect 
+11:02:09.146 [main]                      INFO  o.h.e.j.i.LobCreatorBuilder - useContextualLobCreation - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException 
+11:02:09.155 [main]                      INFO  o.h.e.t.i.TransactionFactoryInitiator - initiateService - HHH000399: Using default transaction strategy (direct JDBC transactions) 
+11:02:09.155 [main]                      INFO  o.h.h.i.a.ASTQueryTranslatorFactory - <init> - HHH000397: Using ASTQueryTranslatorFactory 
+11:02:10.613 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users/{id}],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> controller.UserController.getStatus(java.lang.Integer,boolean,org.springframework.web.util.UriComponentsBuilder) 
+11:02:10.614 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> controller.UserController.saveUser(model.User,org.springframework.web.util.UriComponentsBuilder) 
+11:02:10.614 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<model.User> controller.UserController.getUserInfo(int) throws java.lang.Exception 
+11:02:10.642 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - initControllerAdviceCache - Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-config-servlet': startup date [Thu May 04 11:02:05 MSK 2017]; root of context hierarchy 
+11:02:10.719 [main]                      INFO  o.s.w.s.DispatcherServlet - initServletBean - FrameworkServlet 'dispatcher-config': initialization completed in 5360 ms 
+11:02:10.719 [main]                      INFO  o.e.j.s.h.ContextHandler - doStart - Started o.e.j.w.WebAppContext@64b018f3{/,[file:///home/redin/myProjects/proteiPRver2/proteiRP/src/main/webapp/, file:///home/redin/myProjects/proteiPRver2/proteiRP/target/classes/],AVAILABLE}{file:/home/redin/myProjects/proteiPRver2/proteiRP/target/classes/} 
+11:02:10.731 [main]                      INFO  o.e.j.s.AbstractNCSARequestLog - doStart - Opened /home/redin/myProjects/proteiPRver2/proteiRP/logs/2017_05_04.request.log 
+11:02:10.749 [main]                      INFO  o.e.j.s.ServerConnector - doStart - Started ServerConnector@65c0633c{HTTP/1.1,[http/1.1]}{0.0.0.0:8082} 
+11:02:10.749 [main]                      INFO  o.e.j.s.Server - doStart - Started @6472ms 
+11:02:23.362 [Thread-0]                  INFO  o.e.j.s.ServerConnector - doStop - Stopped ServerConnector@65c0633c{HTTP/1.1,[http/1.1]}{0.0.0.0:8082} 
+11:02:23.363 [Thread-0]                  INFO  / - log - Destroying Spring FrameworkServlet 'dispatcher-config' 
+11:02:23.363 [Thread-0]                  INFO  o.s.w.c.s.XmlWebApplicationContext - doClose - Closing WebApplicationContext for namespace 'dispatcher-config-servlet': startup date [Thu May 04 11:02:05 MSK 2017]; root of context hierarchy 
+11:02:23.366 [Thread-0]                  INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - destroy - Closing JPA EntityManagerFactory for persistence unit 'default' 
+11:02:23.373 [Thread-0]                  INFO  o.e.j.s.h.ContextHandler - doStop - Stopped o.e.j.w.WebAppContext@64b018f3{/,[file:///home/redin/myProjects/proteiPRver2/proteiRP/src/main/webapp/, file:///home/redin/myProjects/proteiPRver2/proteiRP/target/classes/],UNAVAILABLE}{file:/home/redin/myProjects/proteiPRver2/proteiRP/target/classes/} 
+11:14:00.049 [main]                      INFO  o.e.j.util.log - initialized - Logging initialized @633ms 
+11:14:00.182 [main]                      INFO  s.WebServer - createWebAppContext - Running in debug environment 
+11:14:00.196 [main]                      INFO  o.e.j.s.Server - doStart - jetty-9.3.6.v20151106 
+11:14:00.355 [main]                      INFO  o.e.j.w.StandardDescriptorProcessor - visitServlet - NO JSP Support for /, did not find org.eclipse.jetty.jsp.JettyJspServlet 
+11:14:00.499 [main]                      INFO  / - log - Initializing Spring FrameworkServlet 'dispatcher-config' 
+11:14:00.499 [main]                      INFO  o.s.w.s.DispatcherServlet - initServletBean - FrameworkServlet 'dispatcher-config': initialization started 
+11:14:00.519 [main]                      INFO  o.s.w.c.s.XmlWebApplicationContext - prepareRefresh - Refreshing WebApplicationContext for namespace 'dispatcher-config-servlet': startup date [Thu May 04 11:14:00 MSK 2017]; root of context hierarchy 
+11:14:00.558 [main]                      INFO  o.s.b.f.x.XmlBeanDefinitionReader - loadBeanDefinitions - Loading XML bean definitions from URL [file:/home/redin/myProjects/proteiPRver2/proteiRP/target/classes/spring/dipatcher-config.xml] 
+11:14:01.363 [main]                      INFO  o.s.b.f.s.DefaultListableBeanFactory - registerBeanDefinition - Overriding bean definition for bean 'mvcContentNegotiationManager' with a different definition: replacing [Root bean: class [org.springframework.web.accept.ContentNegotiationManagerFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration; factoryMethodName=mvcContentNegotiationManager; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/web/servlet/config/annotation/DelegatingWebMvcConfiguration.class]] 
+11:14:01.365 [main]                      INFO  o.s.c.a.ConfigurationClassBeanDefinitionReader - isOverriddenByExistingDefinition - Skipping bean definition for [BeanMethod:name=mvcUriComponentsContributor,declaringClass=org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport]: a definition for bean 'mvcUriComponentsContributor' already exists. This top-level bean definition is considered as an override. 
+11:14:02.099 [main]                      INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - createNativeEntityManagerFactory - Building JPA container EntityManagerFactory for persistence unit 'default' 
+11:14:02.133 [main]                      INFO  o.h.j.i.u.LogHelper - logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...] 
+11:14:02.278 [main]                      INFO  o.h.Version - logVersion - HHH000412: Hibernate Core {4.3.11.Final} 
+11:14:02.281 [main]                      INFO  o.h.c.Environment - <clinit> - HHH000206: hibernate.properties not found 
+11:14:02.284 [main]                      INFO  o.h.c.Environment - buildBytecodeProvider - HHH000021: Bytecode provider name : javassist 
+11:14:02.754 [main]                      INFO  o.h.a.c.Version - <clinit> - HCANN000001: Hibernate Commons Annotations {4.0.5.Final} 
+11:14:03.045 [main]                      INFO  o.h.d.Dialect - <init> - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect 
+11:14:03.057 [main]                      INFO  o.h.e.j.i.LobCreatorBuilder - useContextualLobCreation - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException 
+11:14:03.215 [main]                      INFO  o.h.h.i.a.ASTQueryTranslatorFactory - <init> - HHH000397: Using ASTQueryTranslatorFactory 
+11:14:03.500 [main]                      INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+11:14:03.889 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users/{id}],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> controller.UserController.getStatus(java.lang.Integer,boolean,org.springframework.web.util.UriComponentsBuilder) 
+11:14:03.891 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> controller.UserController.saveUser(model.User,org.springframework.web.util.UriComponentsBuilder) 
+11:14:03.892 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<model.User> controller.UserController.getUserInfo(int) throws java.lang.Exception 
+11:14:04.659 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - initControllerAdviceCache - Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-config-servlet': startup date [Thu May 04 11:14:00 MSK 2017]; root of context hierarchy 
+11:14:04.708 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - initControllerAdviceCache - Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-config-servlet': startup date [Thu May 04 11:14:00 MSK 2017]; root of context hierarchy 
+11:14:04.806 [main]                      INFO  o.h.d.Dialect - <init> - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect 
+11:14:04.807 [main]                      INFO  o.h.e.j.i.LobCreatorBuilder - useContextualLobCreation - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException 
+11:14:04.814 [main]                      INFO  o.h.e.t.i.TransactionFactoryInitiator - initiateService - HHH000399: Using default transaction strategy (direct JDBC transactions) 
+11:14:04.814 [main]                      INFO  o.h.h.i.a.ASTQueryTranslatorFactory - <init> - HHH000397: Using ASTQueryTranslatorFactory 
+11:14:06.862 [main]                      WARN  o.s.w.c.s.XmlWebApplicationContext - refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in URL [file:/home/redin/myProjects/proteiPRver2/proteiRP/target/classes/spring/dipatcher-config.xml]: Invocation of init method failed; nested exception is liquibase.exception.MigrationFailedException: Migration failed for change set classpath:liquibase/changelogs/db.12345.users.xml::add user::redin_d:
+     Reason: liquibase.exception.DatabaseException: ERROR: invalid input syntax for integer: "User phone"
+  Position: 116 [Failed SQL: INSERT INTO public.users_test (first_name, last_name, email, phone) VALUES ('User', 'User LastName', 'User email', 'User phone')] 
+11:14:06.866 [main]                      INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - destroy - Closing JPA EntityManagerFactory for persistence unit 'default' 
+11:14:06.875 [main]                      ERROR o.s.w.s.DispatcherServlet - initServletBean - Context initialization failed 
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in URL [file:/home/redin/myProjects/proteiPRver2/proteiRP/target/classes/spring/dipatcher-config.xml]: Invocation of init method failed; nested exception is liquibase.exception.MigrationFailedException: Migration failed for change set classpath:liquibase/changelogs/db.12345.users.xml::add user::redin_d:
+     Reason: liquibase.exception.DatabaseException: ERROR: invalid input syntax for integer: "User phone"
+  Position: 116 [Failed SQL: INSERT INTO public.users_test (first_name, last_name, email, phone) VALUES ('User', 'User LastName', 'User email', 'User phone')]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866) ~[spring-context-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542) ~[spring-context-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:668) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:634) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:682) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:553) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:494) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:138) [spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at javax.servlet.GenericServlet.init(GenericServlet.java:244) [javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:626) [jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.servlet.ServletHolder.initialize(ServletHolder.java:405) [jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:875) [jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:346) [jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1379) [jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1341) [jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:772) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:259) [jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:517) [jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.server.Server.start(Server.java:405) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:106) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.server.Server.doStart(Server.java:372) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at server.WebServer.start(WebServer.java:42) [classes/:na]
+	at server.App.start(App.java:20) [classes/:na]
+	at server.App.main(App.java:11) [classes/:na]
+Caused by: liquibase.exception.MigrationFailedException: Migration failed for change set classpath:liquibase/changelogs/db.12345.users.xml::add user::redin_d:
+     Reason: liquibase.exception.DatabaseException: ERROR: invalid input syntax for integer: "User phone"
+  Position: 116 [Failed SQL: INSERT INTO public.users_test (first_name, last_name, email, phone) VALUES ('User', 'User LastName', 'User email', 'User phone')]
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:619) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:51) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:79) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:214) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:192) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:431) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:388) ~[liquibase-core-3.5.3.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	... 39 common frames omitted
+Caused by: liquibase.exception.DatabaseException: ERROR: invalid input syntax for integer: "User phone"
+  Position: 116 [Failed SQL: INSERT INTO public.users_test (first_name, last_name, email, phone) VALUES ('User', 'User LastName', 'User email', 'User phone')]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:309) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:55) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:113) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.database.AbstractJdbcDatabase.execute(AbstractJdbcDatabase.java:1277) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1259) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:582) ~[liquibase-core-3.5.3.jar:na]
+	... 47 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: invalid input syntax for integer: "User phone"
+  Position: 116
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2455) ~[postgresql-9.4.1212.jar:9.4.1212]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2155) ~[postgresql-9.4.1212.jar:9.4.1212]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:288) ~[postgresql-9.4.1212.jar:9.4.1212]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:430) ~[postgresql-9.4.1212.jar:9.4.1212]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:356) ~[postgresql-9.4.1212.jar:9.4.1212]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:303) ~[postgresql-9.4.1212.jar:9.4.1212]
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:289) ~[postgresql-9.4.1212.jar:9.4.1212]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:266) ~[postgresql-9.4.1212.jar:9.4.1212]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:262) ~[postgresql-9.4.1212.jar:9.4.1212]
+	at org.apache.commons.dbcp.DelegatingStatement.execute(DelegatingStatement.java:264) ~[commons-dbcp-1.3.jar:1.3]
+	at org.apache.commons.dbcp.DelegatingStatement.execute(DelegatingStatement.java:264) ~[commons-dbcp-1.3.jar:1.3]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:307) ~[liquibase-core-3.5.3.jar:na]
+	... 52 common frames omitted
+11:14:06.877 [main]                      WARN  / - log - unavailable 
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in URL [file:/home/redin/myProjects/proteiPRver2/proteiRP/target/classes/spring/dipatcher-config.xml]: Invocation of init method failed; nested exception is liquibase.exception.MigrationFailedException: Migration failed for change set classpath:liquibase/changelogs/db.12345.users.xml::add user::redin_d:
+     Reason: liquibase.exception.DatabaseException: ERROR: invalid input syntax for integer: "User phone"
+  Position: 116 [Failed SQL: INSERT INTO public.users_test (first_name, last_name, email, phone) VALUES ('User', 'User LastName', 'User email', 'User phone')]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866) ~[spring-context-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542) ~[spring-context-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:668) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:634) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:682) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:553) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:494) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:138) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at javax.servlet.GenericServlet.init(GenericServlet.java:244) ~[javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:626) [jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.servlet.ServletHolder.initialize(ServletHolder.java:405) [jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:875) [jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:346) [jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1379) [jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1341) [jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:772) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:259) [jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:517) [jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.server.Server.start(Server.java:405) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:106) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.server.Server.doStart(Server.java:372) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at server.WebServer.start(WebServer.java:42) [classes/:na]
+	at server.App.start(App.java:20) [classes/:na]
+	at server.App.main(App.java:11) [classes/:na]
+Caused by: liquibase.exception.MigrationFailedException: Migration failed for change set classpath:liquibase/changelogs/db.12345.users.xml::add user::redin_d:
+     Reason: liquibase.exception.DatabaseException: ERROR: invalid input syntax for integer: "User phone"
+  Position: 116 [Failed SQL: INSERT INTO public.users_test (first_name, last_name, email, phone) VALUES ('User', 'User LastName', 'User email', 'User phone')]
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:619) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:51) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:79) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:214) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:192) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:431) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:388) ~[liquibase-core-3.5.3.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	... 39 common frames omitted
+Caused by: liquibase.exception.DatabaseException: ERROR: invalid input syntax for integer: "User phone"
+  Position: 116 [Failed SQL: INSERT INTO public.users_test (first_name, last_name, email, phone) VALUES ('User', 'User LastName', 'User email', 'User phone')]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:309) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:55) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:113) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.database.AbstractJdbcDatabase.execute(AbstractJdbcDatabase.java:1277) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1259) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:582) ~[liquibase-core-3.5.3.jar:na]
+	... 47 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: invalid input syntax for integer: "User phone"
+  Position: 116
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2455) ~[postgresql-9.4.1212.jar:9.4.1212]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2155) ~[postgresql-9.4.1212.jar:9.4.1212]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:288) ~[postgresql-9.4.1212.jar:9.4.1212]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:430) ~[postgresql-9.4.1212.jar:9.4.1212]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:356) ~[postgresql-9.4.1212.jar:9.4.1212]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:303) ~[postgresql-9.4.1212.jar:9.4.1212]
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:289) ~[postgresql-9.4.1212.jar:9.4.1212]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:266) ~[postgresql-9.4.1212.jar:9.4.1212]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:262) ~[postgresql-9.4.1212.jar:9.4.1212]
+	at org.apache.commons.dbcp.DelegatingStatement.execute(DelegatingStatement.java:264) ~[commons-dbcp-1.3.jar:1.3]
+	at org.apache.commons.dbcp.DelegatingStatement.execute(DelegatingStatement.java:264) ~[commons-dbcp-1.3.jar:1.3]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:307) ~[liquibase-core-3.5.3.jar:na]
+	... 52 common frames omitted
+11:14:06.880 [main]                      WARN  o.e.j.w.WebAppContext - doStart - Failed startup of context o.e.j.w.WebAppContext@6ecc02bb{/,[file:///home/redin/myProjects/proteiPRver2/proteiRP/src/main/webapp/, file:///home/redin/myProjects/proteiPRver2/proteiRP/target/classes/],STARTING}{file:/home/redin/myProjects/proteiPRver2/proteiRP/target/classes/} 
+javax.servlet.ServletException: dispatcher-config@a130d928==org.springframework.web.servlet.DispatcherServlet,1,false
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:647) ~[jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.servlet.ServletHolder.initialize(ServletHolder.java:405) ~[jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:875) ~[jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:346) ~[jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1379) ~[jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1341) ~[jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:772) ~[jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:259) ~[jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:517) ~[jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.server.Server.start(Server.java:405) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:106) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.server.Server.doStart(Server.java:372) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at server.WebServer.start(WebServer.java:42) [classes/:na]
+	at server.App.start(App.java:20) [classes/:na]
+	at server.App.main(App.java:11) [classes/:na]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in URL [file:/home/redin/myProjects/proteiPRver2/proteiRP/target/classes/spring/dipatcher-config.xml]: Invocation of init method failed; nested exception is liquibase.exception.MigrationFailedException: Migration failed for change set classpath:liquibase/changelogs/db.12345.users.xml::add user::redin_d:
+     Reason: liquibase.exception.DatabaseException: ERROR: invalid input syntax for integer: "User phone"
+  Position: 116 [Failed SQL: INSERT INTO public.users_test (first_name, last_name, email, phone) VALUES ('User', 'User LastName', 'User email', 'User phone')]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866) ~[spring-context-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542) ~[spring-context-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:668) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:634) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:682) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:553) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:494) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:138) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at javax.servlet.GenericServlet.init(GenericServlet.java:244) ~[javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:626) ~[jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
+	... 22 common frames omitted
+Caused by: liquibase.exception.MigrationFailedException: Migration failed for change set classpath:liquibase/changelogs/db.12345.users.xml::add user::redin_d:
+     Reason: liquibase.exception.DatabaseException: ERROR: invalid input syntax for integer: "User phone"
+  Position: 116 [Failed SQL: INSERT INTO public.users_test (first_name, last_name, email, phone) VALUES ('User', 'User LastName', 'User email', 'User phone')]
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:619) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:51) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:79) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:214) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:192) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:431) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:388) ~[liquibase-core-3.5.3.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	... 39 common frames omitted
+Caused by: liquibase.exception.DatabaseException: ERROR: invalid input syntax for integer: "User phone"
+  Position: 116 [Failed SQL: INSERT INTO public.users_test (first_name, last_name, email, phone) VALUES ('User', 'User LastName', 'User email', 'User phone')]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:309) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:55) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:113) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.database.AbstractJdbcDatabase.execute(AbstractJdbcDatabase.java:1277) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1259) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:582) ~[liquibase-core-3.5.3.jar:na]
+	... 47 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: invalid input syntax for integer: "User phone"
+  Position: 116
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2455) ~[postgresql-9.4.1212.jar:9.4.1212]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2155) ~[postgresql-9.4.1212.jar:9.4.1212]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:288) ~[postgresql-9.4.1212.jar:9.4.1212]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:430) ~[postgresql-9.4.1212.jar:9.4.1212]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:356) ~[postgresql-9.4.1212.jar:9.4.1212]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:303) ~[postgresql-9.4.1212.jar:9.4.1212]
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:289) ~[postgresql-9.4.1212.jar:9.4.1212]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:266) ~[postgresql-9.4.1212.jar:9.4.1212]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:262) ~[postgresql-9.4.1212.jar:9.4.1212]
+	at org.apache.commons.dbcp.DelegatingStatement.execute(DelegatingStatement.java:264) ~[commons-dbcp-1.3.jar:1.3]
+	at org.apache.commons.dbcp.DelegatingStatement.execute(DelegatingStatement.java:264) ~[commons-dbcp-1.3.jar:1.3]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:307) ~[liquibase-core-3.5.3.jar:na]
+	... 52 common frames omitted
+11:14:06.899 [main]                      INFO  o.e.j.s.AbstractNCSARequestLog - doStart - Opened /home/redin/myProjects/proteiPRver2/proteiRP/logs/2017_05_04.request.log 
+11:14:06.917 [main]                      INFO  o.e.j.s.ServerConnector - doStart - Started ServerConnector@115dcaea{HTTP/1.1,[http/1.1]}{0.0.0.0:8082} 
+11:14:06.918 [main]                      INFO  o.e.j.s.Server - doStart - Started @7507ms 
+11:14:55.652 [Thread-0]                  INFO  o.e.j.s.ServerConnector - doStop - Stopped ServerConnector@115dcaea{HTTP/1.1,[http/1.1]}{0.0.0.0:8082} 
+11:14:55.656 [Thread-0]                  INFO  o.e.j.s.h.ContextHandler - doStop - Stopped o.e.j.w.WebAppContext@6ecc02bb{/,[file:///home/redin/myProjects/proteiPRver2/proteiRP/src/main/webapp/, file:///home/redin/myProjects/proteiPRver2/proteiRP/target/classes/],UNAVAILABLE}{file:/home/redin/myProjects/proteiPRver2/proteiRP/target/classes/} 
+11:14:58.169 [main]                      INFO  o.e.j.util.log - initialized - Logging initialized @696ms 
+11:14:58.308 [main]                      INFO  s.WebServer - createWebAppContext - Running in debug environment 
+11:14:58.326 [main]                      INFO  o.e.j.s.Server - doStart - jetty-9.3.6.v20151106 
+11:14:58.486 [main]                      INFO  o.e.j.w.StandardDescriptorProcessor - visitServlet - NO JSP Support for /, did not find org.eclipse.jetty.jsp.JettyJspServlet 
+11:14:58.688 [main]                      INFO  / - log - Initializing Spring FrameworkServlet 'dispatcher-config' 
+11:14:58.689 [main]                      INFO  o.s.w.s.DispatcherServlet - initServletBean - FrameworkServlet 'dispatcher-config': initialization started 
+11:14:58.715 [main]                      INFO  o.s.w.c.s.XmlWebApplicationContext - prepareRefresh - Refreshing WebApplicationContext for namespace 'dispatcher-config-servlet': startup date [Thu May 04 11:14:58 MSK 2017]; root of context hierarchy 
+11:14:58.756 [main]                      INFO  o.s.b.f.x.XmlBeanDefinitionReader - loadBeanDefinitions - Loading XML bean definitions from URL [file:/home/redin/myProjects/proteiPRver2/proteiRP/target/classes/spring/dipatcher-config.xml] 
+11:14:59.607 [main]                      INFO  o.s.b.f.s.DefaultListableBeanFactory - registerBeanDefinition - Overriding bean definition for bean 'mvcContentNegotiationManager' with a different definition: replacing [Root bean: class [org.springframework.web.accept.ContentNegotiationManagerFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration; factoryMethodName=mvcContentNegotiationManager; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/web/servlet/config/annotation/DelegatingWebMvcConfiguration.class]] 
+11:14:59.609 [main]                      INFO  o.s.c.a.ConfigurationClassBeanDefinitionReader - isOverriddenByExistingDefinition - Skipping bean definition for [BeanMethod:name=mvcUriComponentsContributor,declaringClass=org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport]: a definition for bean 'mvcUriComponentsContributor' already exists. This top-level bean definition is considered as an override. 
+11:15:00.605 [main]                      INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - createNativeEntityManagerFactory - Building JPA container EntityManagerFactory for persistence unit 'default' 
+11:15:00.639 [main]                      INFO  o.h.j.i.u.LogHelper - logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...] 
+11:15:00.754 [main]                      INFO  o.h.Version - logVersion - HHH000412: Hibernate Core {4.3.11.Final} 
+11:15:00.758 [main]                      INFO  o.h.c.Environment - <clinit> - HHH000206: hibernate.properties not found 
+11:15:00.761 [main]                      INFO  o.h.c.Environment - buildBytecodeProvider - HHH000021: Bytecode provider name : javassist 
+11:15:01.084 [main]                      INFO  o.h.a.c.Version - <clinit> - HCANN000001: Hibernate Commons Annotations {4.0.5.Final} 
+11:15:01.353 [main]                      INFO  o.h.d.Dialect - <init> - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect 
+11:15:01.363 [main]                      INFO  o.h.e.j.i.LobCreatorBuilder - useContextualLobCreation - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException 
+11:15:01.510 [main]                      INFO  o.h.h.i.a.ASTQueryTranslatorFactory - <init> - HHH000397: Using ASTQueryTranslatorFactory 
+11:15:01.780 [main]                      INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+11:15:02.107 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users/{id}],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> controller.UserController.getStatus(java.lang.Integer,boolean,org.springframework.web.util.UriComponentsBuilder) 
+11:15:02.109 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> controller.UserController.saveUser(model.User,org.springframework.web.util.UriComponentsBuilder) 
+11:15:02.110 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<model.User> controller.UserController.getUserInfo(int) throws java.lang.Exception 
+11:15:02.646 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - initControllerAdviceCache - Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-config-servlet': startup date [Thu May 04 11:14:58 MSK 2017]; root of context hierarchy 
+11:15:02.706 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - initControllerAdviceCache - Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-config-servlet': startup date [Thu May 04 11:14:58 MSK 2017]; root of context hierarchy 
+11:15:02.799 [main]                      INFO  o.h.d.Dialect - <init> - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect 
+11:15:02.801 [main]                      INFO  o.h.e.j.i.LobCreatorBuilder - useContextualLobCreation - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException 
+11:15:02.807 [main]                      INFO  o.h.e.t.i.TransactionFactoryInitiator - initiateService - HHH000399: Using default transaction strategy (direct JDBC transactions) 
+11:15:02.808 [main]                      INFO  o.h.h.i.a.ASTQueryTranslatorFactory - <init> - HHH000397: Using ASTQueryTranslatorFactory 
+11:15:04.426 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users/{id}],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> controller.UserController.getStatus(java.lang.Integer,boolean,org.springframework.web.util.UriComponentsBuilder) 
+11:15:04.427 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> controller.UserController.saveUser(model.User,org.springframework.web.util.UriComponentsBuilder) 
+11:15:04.428 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<model.User> controller.UserController.getUserInfo(int) throws java.lang.Exception 
+11:15:04.465 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - initControllerAdviceCache - Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-config-servlet': startup date [Thu May 04 11:14:58 MSK 2017]; root of context hierarchy 
+11:15:04.611 [main]                      INFO  o.s.w.s.DispatcherServlet - initServletBean - FrameworkServlet 'dispatcher-config': initialization completed in 5922 ms 
+11:15:04.612 [main]                      INFO  o.e.j.s.h.ContextHandler - doStart - Started o.e.j.w.WebAppContext@53747c4a{/,[file:///home/redin/myProjects/proteiPRver2/proteiRP/src/main/webapp/, file:///home/redin/myProjects/proteiPRver2/proteiRP/target/classes/],AVAILABLE}{file:/home/redin/myProjects/proteiPRver2/proteiRP/target/classes/} 
+11:15:04.614 [main]                      INFO  o.e.j.s.AbstractNCSARequestLog - doStart - Opened /home/redin/myProjects/proteiPRver2/proteiRP/logs/2017_05_04.request.log 
+11:15:04.633 [main]                      INFO  o.e.j.s.ServerConnector - doStart - Started ServerConnector@62b3a2f6{HTTP/1.1,[http/1.1]}{0.0.0.0:8082} 
+11:15:04.633 [main]                      INFO  o.e.j.s.Server - doStart - Started @7166ms 
+11:34:27.887 [Thread-0]                  INFO  o.e.j.s.ServerConnector - doStop - Stopped ServerConnector@62b3a2f6{HTTP/1.1,[http/1.1]}{0.0.0.0:8082} 
+11:34:27.888 [Thread-0]                  INFO  / - log - Destroying Spring FrameworkServlet 'dispatcher-config' 
+11:34:27.888 [Thread-0]                  INFO  o.s.w.c.s.XmlWebApplicationContext - doClose - Closing WebApplicationContext for namespace 'dispatcher-config-servlet': startup date [Thu May 04 11:14:58 MSK 2017]; root of context hierarchy 
+11:34:27.890 [Thread-0]                  INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - destroy - Closing JPA EntityManagerFactory for persistence unit 'default' 
+11:34:27.893 [Thread-0]                  INFO  o.e.j.s.h.ContextHandler - doStop - Stopped o.e.j.w.WebAppContext@53747c4a{/,[file:///home/redin/myProjects/proteiPRver2/proteiRP/src/main/webapp/, file:///home/redin/myProjects/proteiPRver2/proteiRP/target/classes/],UNAVAILABLE}{file:/home/redin/myProjects/proteiPRver2/proteiRP/target/classes/} 

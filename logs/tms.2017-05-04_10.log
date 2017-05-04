@@ -1,0 +1,640 @@
+10:33:02.154 [main]                      INFO  o.e.j.util.log - initialized - Logging initialized @732ms 
+10:33:02.307 [main]                      INFO  r.o.s.WebServer - createWebAppContext - Running in debug environment 
+10:33:02.327 [main]                      INFO  o.e.j.s.Server - doStart - jetty-9.3.6.v20151106 
+10:33:02.489 [main]                      INFO  o.e.j.w.StandardDescriptorProcessor - visitServlet - NO JSP Support for /, did not find org.eclipse.jetty.jsp.JettyJspServlet 
+10:33:02.703 [main]                      INFO  / - log - Initializing Spring FrameworkServlet 'dispatcher-config' 
+10:33:02.704 [main]                      INFO  o.s.w.s.DispatcherServlet - initServletBean - FrameworkServlet 'dispatcher-config': initialization started 
+10:33:02.730 [main]                      INFO  o.s.w.c.s.XmlWebApplicationContext - prepareRefresh - Refreshing WebApplicationContext for namespace 'dispatcher-config-servlet': startup date [Thu May 04 10:33:02 MSK 2017]; root of context hierarchy 
+10:33:02.789 [main]                      INFO  o.s.b.f.x.XmlBeanDefinitionReader - loadBeanDefinitions - Loading XML bean definitions from class path resource [spring/dipatcher-config.xml] 
+10:33:03.743 [main]                      INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - createNativeEntityManagerFactory - Building JPA container EntityManagerFactory for persistence unit 'default' 
+10:33:03.760 [main]                      INFO  o.h.j.i.u.LogHelper - logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...] 
+10:33:03.814 [main]                      INFO  o.h.Version - logVersion - HHH000412: Hibernate Core {4.3.11.Final} 
+10:33:03.816 [main]                      INFO  o.h.c.Environment - <clinit> - HHH000206: hibernate.properties not found 
+10:33:03.817 [main]                      INFO  o.h.c.Environment - buildBytecodeProvider - HHH000021: Bytecode provider name : javassist 
+10:33:04.056 [main]                      INFO  o.h.a.c.Version - <clinit> - HCANN000001: Hibernate Commons Annotations {4.0.5.Final} 
+10:33:04.312 [main]                      INFO  o.h.d.Dialect - <init> - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect 
+10:33:04.325 [main]                      INFO  o.h.e.j.i.LobCreatorBuilder - useContextualLobCreation - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException 
+10:33:04.438 [main]                      INFO  o.h.h.i.a.ASTQueryTranslatorFactory - <init> - HHH000397: Using ASTQueryTranslatorFactory 
+10:33:04.694 [main]                      INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+10:33:04.762 [main]                      INFO  o.h.d.Dialect - <init> - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect 
+10:33:04.763 [main]                      INFO  o.h.e.j.i.LobCreatorBuilder - useContextualLobCreation - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException 
+10:33:04.770 [main]                      INFO  o.h.e.t.i.TransactionFactoryInitiator - initiateService - HHH000399: Using default transaction strategy (direct JDBC transactions) 
+10:33:04.771 [main]                      INFO  o.h.h.i.a.ASTQueryTranslatorFactory - <init> - HHH000397: Using ASTQueryTranslatorFactory 
+10:33:06.275 [main]                      INFO  o.s.o.h.HibernateTransactionManager - afterPropertiesSet - Using DataSource [org.apache.commons.dbcp.BasicDataSource@5c45d770] of Hibernate SessionFactory for HibernateTransactionManager 
+10:33:06.578 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users/{id}],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> controller.UserController.getStatus(java.lang.Integer,boolean,org.springframework.web.util.UriComponentsBuilder)
+10:33:06.580 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> controller.UserController.saveUser(model.User,org.springframework.web.util.UriComponentsBuilder)
+10:33:06.581 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<model.User> controller.UserController.getUserInfo(int) throws java.lang.Exception
+10:33:06.849 [main]                      WARN  o.s.w.c.s.XmlWebApplicationContext - refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerAdapter' defined in class path resource [org/springframework/web/servlet/config/annotation/DelegatingWebMvcConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]: Factory method 'requestMappingHandlerAdapter' threw exception; nested exception is java.lang.NoClassDefFoundError: com/fasterxml/jackson/core/util/DefaultIndenter 
+10:33:06.851 [main]                      INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - destroy - Closing JPA EntityManagerFactory for persistence unit 'default' 
+10:33:06.856 [main]                      ERROR o.s.w.s.DispatcherServlet - initServletBean - Context initialization failed 
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerAdapter' defined in class path resource [org/springframework/web/servlet/config/annotation/DelegatingWebMvcConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]: Factory method 'requestMappingHandlerAdapter' threw exception; nested exception is java.lang.NoClassDefFoundError: com/fasterxml/jackson/core/util/DefaultIndenter
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:668)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:682)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:553)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:494)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:138)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:244)
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:626)
+	at org.eclipse.jetty.servlet.ServletHolder.initialize(ServletHolder.java:405)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:875)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:346)
+	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1379)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1341)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:772)
+	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:259)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:517)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.server.Server.start(Server.java:405)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:106)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:372)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at server.WebServer.start(WebServer.java:42)
+	at server.App.start(App.java:20)
+	at server.App.main(App.java:11)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]: Factory method 'requestMappingHandlerAdapter' threw exception; nested exception is java.lang.NoClassDefFoundError: com/fasterxml/jackson/core/util/DefaultIndenter
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	... 41 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/fasterxml/jackson/core/util/DefaultIndenter
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.init(AbstractJackson2HttpMessageConverter.java:97)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.<init>(AbstractJackson2HttpMessageConverter.java:90)
+	at org.springframework.http.converter.json.MappingJackson2HttpMessageConverter.<init>(MappingJackson2HttpMessageConverter.java:66)
+	at org.springframework.http.converter.json.MappingJackson2HttpMessageConverter.<init>(MappingJackson2HttpMessageConverter.java:57)
+	at org.springframework.http.converter.support.AllEncompassingFormHttpMessageConverter.<init>(AllEncompassingFormHttpMessageConverter.java:61)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.<init>(RequestMappingHandlerAdapter.java:182)
+	at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.createRequestMappingHandlerAdapter(WebMvcConfigurationSupport.java:557)
+	at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.requestMappingHandlerAdapter(WebMvcConfigurationSupport.java:523)
+	at org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration$$EnhancerBySpringCGLIB$$94e041c7.CGLIB$requestMappingHandlerAdapter$36(<generated>)
+	at org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration$$EnhancerBySpringCGLIB$$94e041c7$$FastClassBySpringCGLIB$$35696adf.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:358)
+	at org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration$$EnhancerBySpringCGLIB$$94e041c7.requestMappingHandlerAdapter(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	... 42 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.core.util.DefaultIndenter
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 60 common frames omitted
+10:33:06.857 [main]                      WARN  / - log - unavailable 
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerAdapter' defined in class path resource [org/springframework/web/servlet/config/annotation/DelegatingWebMvcConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]: Factory method 'requestMappingHandlerAdapter' threw exception; nested exception is java.lang.NoClassDefFoundError: com/fasterxml/jackson/core/util/DefaultIndenter
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:668)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:682)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:553)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:494)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:138)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:244)
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:626)
+	at org.eclipse.jetty.servlet.ServletHolder.initialize(ServletHolder.java:405)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:875)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:346)
+	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1379)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1341)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:772)
+	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:259)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:517)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.server.Server.start(Server.java:405)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:106)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:372)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at server.WebServer.start(WebServer.java:42)
+	at server.App.start(App.java:20)
+	at server.App.main(App.java:11)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]: Factory method 'requestMappingHandlerAdapter' threw exception; nested exception is java.lang.NoClassDefFoundError: com/fasterxml/jackson/core/util/DefaultIndenter
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	... 41 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/fasterxml/jackson/core/util/DefaultIndenter
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.init(AbstractJackson2HttpMessageConverter.java:97)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.<init>(AbstractJackson2HttpMessageConverter.java:90)
+	at org.springframework.http.converter.json.MappingJackson2HttpMessageConverter.<init>(MappingJackson2HttpMessageConverter.java:66)
+	at org.springframework.http.converter.json.MappingJackson2HttpMessageConverter.<init>(MappingJackson2HttpMessageConverter.java:57)
+	at org.springframework.http.converter.support.AllEncompassingFormHttpMessageConverter.<init>(AllEncompassingFormHttpMessageConverter.java:61)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.<init>(RequestMappingHandlerAdapter.java:182)
+	at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.createRequestMappingHandlerAdapter(WebMvcConfigurationSupport.java:557)
+	at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.requestMappingHandlerAdapter(WebMvcConfigurationSupport.java:523)
+	at org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration$$EnhancerBySpringCGLIB$$94e041c7.CGLIB$requestMappingHandlerAdapter$36(<generated>)
+	at org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration$$EnhancerBySpringCGLIB$$94e041c7$$FastClassBySpringCGLIB$$35696adf.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:358)
+	at org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration$$EnhancerBySpringCGLIB$$94e041c7.requestMappingHandlerAdapter(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	... 42 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.core.util.DefaultIndenter
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 60 common frames omitted
+10:33:06.859 [main]                      WARN  o.e.j.w.WebAppContext - doStart - Failed startup of context o.e.j.w.WebAppContext@6ea246af{/,[file:///home/redin/myProjects/proteiPRver2/proteiRP/src/ru.originald/main/webapp/, file:///home/redin/myProjects/proteiPRver2/proteiRP/target/classes/],STARTING}{file:/home/redin/myProjects/proteiPRver2/proteiRP/target/classes/} 
+javax.servlet.ServletException: dispatcher-config@a130d928==org.springframework.web.servlet.DispatcherServlet,1,false
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:647)
+	at org.eclipse.jetty.servlet.ServletHolder.initialize(ServletHolder.java:405)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:875)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:346)
+	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1379)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1341)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:772)
+	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:259)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:517)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.server.Server.start(Server.java:405)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:106)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:372)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at server.WebServer.start(WebServer.java:42)
+	at server.App.start(App.java:20)
+	at server.App.main(App.java:11)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerAdapter' defined in class path resource [org/springframework/web/servlet/config/annotation/DelegatingWebMvcConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]: Factory method 'requestMappingHandlerAdapter' threw exception; nested exception is java.lang.NoClassDefFoundError: com/fasterxml/jackson/core/util/DefaultIndenter
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:668)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:682)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:553)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:494)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:138)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:244)
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:626)
+	... 22 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]: Factory method 'requestMappingHandlerAdapter' threw exception; nested exception is java.lang.NoClassDefFoundError: com/fasterxml/jackson/core/util/DefaultIndenter
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	... 41 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/fasterxml/jackson/core/util/DefaultIndenter
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.init(AbstractJackson2HttpMessageConverter.java:97)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.<init>(AbstractJackson2HttpMessageConverter.java:90)
+	at org.springframework.http.converter.json.MappingJackson2HttpMessageConverter.<init>(MappingJackson2HttpMessageConverter.java:66)
+	at org.springframework.http.converter.json.MappingJackson2HttpMessageConverter.<init>(MappingJackson2HttpMessageConverter.java:57)
+	at org.springframework.http.converter.support.AllEncompassingFormHttpMessageConverter.<init>(AllEncompassingFormHttpMessageConverter.java:61)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.<init>(RequestMappingHandlerAdapter.java:182)
+	at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.createRequestMappingHandlerAdapter(WebMvcConfigurationSupport.java:557)
+	at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.requestMappingHandlerAdapter(WebMvcConfigurationSupport.java:523)
+	at org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration$$EnhancerBySpringCGLIB$$94e041c7.CGLIB$requestMappingHandlerAdapter$36(<generated>)
+	at org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration$$EnhancerBySpringCGLIB$$94e041c7$$FastClassBySpringCGLIB$$35696adf.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:358)
+	at org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration$$EnhancerBySpringCGLIB$$94e041c7.requestMappingHandlerAdapter(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	... 42 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.core.util.DefaultIndenter
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 60 common frames omitted
+10:33:06.862 [main]                      INFO  o.e.j.s.AbstractNCSARequestLog - doStart - Opened /home/redin/myProjects/proteiPRver2/proteiRP/logs/2017_05_04.request.log 
+10:33:06.871 [main]                      INFO  o.e.j.s.ServerConnector - doStart - Started ServerConnector@2d2b6960{HTTP/1.1,[http/1.1]}{0.0.0.0:8082} 
+10:33:06.872 [main]                      INFO  o.e.j.s.Server - doStart - Started @5453ms 
+10:35:32.708 [Thread-0]                  INFO  o.e.j.s.ServerConnector - doStop - Stopped ServerConnector@2d2b6960{HTTP/1.1,[http/1.1]}{0.0.0.0:8082} 
+10:35:32.711 [Thread-0]                  INFO  o.e.j.s.h.ContextHandler - doStop - Stopped o.e.j.w.WebAppContext@6ea246af{/,[file:///home/redin/myProjects/proteiPRver2/proteiRP/src/ru.originald/main/webapp/, file:///home/redin/myProjects/proteiPRver2/proteiRP/target/classes/],UNAVAILABLE}{file:/home/redin/myProjects/proteiPRver2/proteiRP/target/classes/} 
+10:35:47.073 [main]                      INFO  o.e.j.util.log - initialized - Logging initialized @838ms 
+10:35:47.222 [main]                      INFO  r.o.s.WebServer - createWebAppContext - Running in debug environment 
+10:35:47.237 [main]                      INFO  o.e.j.s.Server - doStart - jetty-9.3.6.v20151106 
+10:35:47.433 [main]                      INFO  o.e.j.w.StandardDescriptorProcessor - visitServlet - NO JSP Support for /, did not find org.eclipse.jetty.jsp.JettyJspServlet 
+10:35:47.700 [main]                      INFO  / - log - Initializing Spring FrameworkServlet 'dispatcher-config' 
+10:35:47.700 [main]                      INFO  o.s.w.s.DispatcherServlet - initServletBean - FrameworkServlet 'dispatcher-config': initialization started 
+10:35:47.716 [main]                      INFO  o.s.w.c.s.XmlWebApplicationContext - prepareRefresh - Refreshing WebApplicationContext for namespace 'dispatcher-config-servlet': startup date [Thu May 04 10:35:47 MSK 2017]; root of context hierarchy 
+10:35:47.756 [main]                      INFO  o.s.b.f.x.XmlBeanDefinitionReader - loadBeanDefinitions - Loading XML bean definitions from class path resource [spring/dipatcher-config.xml] 
+10:35:48.719 [main]                      INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - createNativeEntityManagerFactory - Building JPA container EntityManagerFactory for persistence unit 'default' 
+10:35:48.736 [main]                      INFO  o.h.j.i.u.LogHelper - logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...] 
+10:35:48.796 [main]                      INFO  o.h.Version - logVersion - HHH000412: Hibernate Core {4.3.11.Final} 
+10:35:48.798 [main]                      INFO  o.h.c.Environment - <clinit> - HHH000206: hibernate.properties not found 
+10:35:48.800 [main]                      INFO  o.h.c.Environment - buildBytecodeProvider - HHH000021: Bytecode provider name : javassist 
+10:35:49.058 [main]                      INFO  o.h.a.c.Version - <clinit> - HCANN000001: Hibernate Commons Annotations {4.0.5.Final} 
+10:35:49.282 [main]                      INFO  o.h.d.Dialect - <init> - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect 
+10:35:49.292 [main]                      INFO  o.h.e.j.i.LobCreatorBuilder - useContextualLobCreation - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException 
+10:35:49.419 [main]                      INFO  o.h.h.i.a.ASTQueryTranslatorFactory - <init> - HHH000397: Using ASTQueryTranslatorFactory 
+10:35:49.707 [main]                      INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+10:35:49.792 [main]                      INFO  o.h.d.Dialect - <init> - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect 
+10:35:49.794 [main]                      INFO  o.h.e.j.i.LobCreatorBuilder - useContextualLobCreation - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException 
+10:35:49.801 [main]                      INFO  o.h.e.t.i.TransactionFactoryInitiator - initiateService - HHH000399: Using default transaction strategy (direct JDBC transactions) 
+10:35:49.802 [main]                      INFO  o.h.h.i.a.ASTQueryTranslatorFactory - <init> - HHH000397: Using ASTQueryTranslatorFactory 
+10:35:49.873 [main]                      WARN  o.s.w.c.s.XmlWebApplicationContext - refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.cache.interceptor.CacheInterceptor#0': Cannot resolve reference to bean 'cacheManager' while setting bean property 'cacheManager'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'cacheManager' available 
+10:35:49.874 [main]                      INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - destroy - Closing JPA EntityManagerFactory for persistence unit 'default' 
+10:35:49.878 [main]                      ERROR o.s.w.s.DispatcherServlet - initServletBean - Context initialization failed 
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.cache.interceptor.CacheInterceptor#0': Cannot resolve reference to bean 'cacheManager' while setting bean property 'cacheManager'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'cacheManager' available
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:359)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1531)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1276)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:668)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:682)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:553)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:494)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:138)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:244)
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:626)
+	at org.eclipse.jetty.servlet.ServletHolder.initialize(ServletHolder.java:405)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:875)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:346)
+	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1379)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1341)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:772)
+	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:259)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:517)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.server.Server.start(Server.java:405)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:106)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:372)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at server.WebServer.start(WebServer.java:42)
+	at server.App.start(App.java:20)
+	at server.App.main(App.java:11)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'cacheManager' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:687)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1207)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:284)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:351)
+	... 42 common frames omitted
+10:35:49.879 [main]                      WARN  / - log - unavailable 
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.cache.interceptor.CacheInterceptor#0': Cannot resolve reference to bean 'cacheManager' while setting bean property 'cacheManager'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'cacheManager' available
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:359)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1531)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1276)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:668)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:682)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:553)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:494)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:138)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:244)
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:626)
+	at org.eclipse.jetty.servlet.ServletHolder.initialize(ServletHolder.java:405)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:875)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:346)
+	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1379)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1341)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:772)
+	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:259)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:517)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.server.Server.start(Server.java:405)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:106)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:372)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at server.WebServer.start(WebServer.java:42)
+	at server.App.start(App.java:20)
+	at server.App.main(App.java:11)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'cacheManager' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:687)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1207)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:284)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:351)
+	... 42 common frames omitted
+10:35:49.880 [main]                      WARN  o.e.j.w.WebAppContext - doStart - Failed startup of context o.e.j.w.WebAppContext@1cb37ee4{/,[file:///home/redin/myProjects/proteiPRver2/proteiRP/src/ru.originald/main/webapp/, file:///home/redin/myProjects/proteiPRver2/proteiRP/target/classes/],STARTING}{file:/home/redin/myProjects/proteiPRver2/proteiRP/target/classes/} 
+javax.servlet.ServletException: dispatcher-config@a130d928==org.springframework.web.servlet.DispatcherServlet,1,false
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:647)
+	at org.eclipse.jetty.servlet.ServletHolder.initialize(ServletHolder.java:405)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:875)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:346)
+	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1379)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1341)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:772)
+	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:259)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:517)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.server.Server.start(Server.java:405)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:106)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:372)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at server.WebServer.start(WebServer.java:42)
+	at server.App.start(App.java:20)
+	at server.App.main(App.java:11)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.cache.interceptor.CacheInterceptor#0': Cannot resolve reference to bean 'cacheManager' while setting bean property 'cacheManager'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'cacheManager' available
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:359)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1531)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1276)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:668)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:682)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:553)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:494)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:138)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:244)
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:626)
+	... 22 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'cacheManager' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:687)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1207)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:284)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:351)
+	... 42 common frames omitted
+10:35:49.883 [main]                      INFO  o.e.j.s.AbstractNCSARequestLog - doStart - Opened /home/redin/myProjects/proteiPRver2/proteiRP/logs/2017_05_04.request.log 
+10:35:49.897 [main]                      INFO  o.e.j.s.ServerConnector - doStart - Started ServerConnector@604b1e1d{HTTP/1.1,[http/1.1]}{0.0.0.0:8082} 
+10:35:49.897 [main]                      INFO  o.e.j.s.Server - doStart - Started @3668ms 
+10:39:10.858 [Thread-0]                  INFO  o.e.j.s.ServerConnector - doStop - Stopped ServerConnector@604b1e1d{HTTP/1.1,[http/1.1]}{0.0.0.0:8082} 
+10:39:10.861 [Thread-0]                  INFO  o.e.j.s.h.ContextHandler - doStop - Stopped o.e.j.w.WebAppContext@1cb37ee4{/,[file:///home/redin/myProjects/proteiPRver2/proteiRP/src/ru.originald/main/webapp/, file:///home/redin/myProjects/proteiPRver2/proteiRP/target/classes/],UNAVAILABLE}{file:/home/redin/myProjects/proteiPRver2/proteiRP/target/classes/} 
+10:39:15.053 [main]                      INFO  o.e.j.util.log - initialized - Logging initialized @517ms 
+10:39:15.193 [main]                      INFO  r.o.s.WebServer - createWebAppContext - Running in debug environment 
+10:39:15.206 [main]                      INFO  o.e.j.s.Server - doStart - jetty-9.3.6.v20151106 
+10:39:15.380 [main]                      INFO  o.e.j.w.StandardDescriptorProcessor - visitServlet - NO JSP Support for /, did not find org.eclipse.jetty.jsp.JettyJspServlet 
+10:39:15.537 [main]                      INFO  / - log - Initializing Spring FrameworkServlet 'dispatcher-config' 
+10:39:15.537 [main]                      INFO  o.s.w.s.DispatcherServlet - initServletBean - FrameworkServlet 'dispatcher-config': initialization started 
+10:39:15.557 [main]                      INFO  o.s.w.c.s.XmlWebApplicationContext - prepareRefresh - Refreshing WebApplicationContext for namespace 'dispatcher-config-servlet': startup date [Thu May 04 10:39:15 MSK 2017]; root of context hierarchy 
+10:39:15.599 [main]                      INFO  o.s.b.f.x.XmlBeanDefinitionReader - loadBeanDefinitions - Loading XML bean definitions from class path resource [spring/dipatcher-config.xml] 
+10:39:16.815 [main]                      INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - createNativeEntityManagerFactory - Building JPA container EntityManagerFactory for persistence unit 'default' 
+10:39:16.836 [main]                      INFO  o.h.j.i.u.LogHelper - logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...] 
+10:39:16.908 [main]                      INFO  o.h.Version - logVersion - HHH000412: Hibernate Core {4.3.11.Final} 
+10:39:16.910 [main]                      INFO  o.h.c.Environment - <clinit> - HHH000206: hibernate.properties not found 
+10:39:16.912 [main]                      INFO  o.h.c.Environment - buildBytecodeProvider - HHH000021: Bytecode provider name : javassist 
+10:39:17.203 [main]                      INFO  o.h.a.c.Version - <clinit> - HCANN000001: Hibernate Commons Annotations {4.0.5.Final} 
+10:39:17.497 [main]                      INFO  o.h.d.Dialect - <init> - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect 
+10:39:17.504 [main]                      INFO  o.h.e.j.i.LobCreatorBuilder - useContextualLobCreation - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException 
+10:39:17.623 [main]                      INFO  o.h.h.i.a.ASTQueryTranslatorFactory - <init> - HHH000397: Using ASTQueryTranslatorFactory 
+10:39:17.947 [main]                      INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+10:39:18.021 [main]                      INFO  o.h.d.Dialect - <init> - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect 
+10:39:18.022 [main]                      INFO  o.h.e.j.i.LobCreatorBuilder - useContextualLobCreation - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException 
+10:39:18.029 [main]                      INFO  o.h.e.t.i.TransactionFactoryInitiator - initiateService - HHH000399: Using default transaction strategy (direct JDBC transactions) 
+10:39:18.029 [main]                      INFO  o.h.h.i.a.ASTQueryTranslatorFactory - <init> - HHH000397: Using ASTQueryTranslatorFactory 
+10:39:18.120 [main]                      WARN  o.s.w.c.s.XmlWebApplicationContext - refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.cache.interceptor.CacheInterceptor#0': Cannot resolve reference to bean 'cacheManager' while setting bean property 'cacheManager'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'cacheManager' available 
+10:39:18.121 [main]                      INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - destroy - Closing JPA EntityManagerFactory for persistence unit 'default' 
+10:39:18.126 [main]                      ERROR o.s.w.s.DispatcherServlet - initServletBean - Context initialization failed 
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.cache.interceptor.CacheInterceptor#0': Cannot resolve reference to bean 'cacheManager' while setting bean property 'cacheManager'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'cacheManager' available
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:359)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1531)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1276)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:668)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:682)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:553)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:494)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:138)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:244)
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:626)
+	at org.eclipse.jetty.servlet.ServletHolder.initialize(ServletHolder.java:405)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:875)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:346)
+	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1379)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1341)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:772)
+	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:259)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:517)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.server.Server.start(Server.java:405)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:106)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:372)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at server.WebServer.start(WebServer.java:42)
+	at server.App.start(App.java:20)
+	at server.App.main(App.java:11)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'cacheManager' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:687)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1207)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:284)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:351)
+	... 42 common frames omitted
+10:39:18.127 [main]                      WARN  / - log - unavailable 
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.cache.interceptor.CacheInterceptor#0': Cannot resolve reference to bean 'cacheManager' while setting bean property 'cacheManager'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'cacheManager' available
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:359)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1531)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1276)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:668)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:682)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:553)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:494)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:138)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:244)
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:626)
+	at org.eclipse.jetty.servlet.ServletHolder.initialize(ServletHolder.java:405)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:875)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:346)
+	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1379)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1341)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:772)
+	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:259)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:517)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.server.Server.start(Server.java:405)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:106)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:372)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at server.WebServer.start(WebServer.java:42)
+	at server.App.start(App.java:20)
+	at server.App.main(App.java:11)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'cacheManager' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:687)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1207)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:284)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:351)
+	... 42 common frames omitted
+10:39:18.129 [main]                      WARN  o.e.j.w.WebAppContext - doStart - Failed startup of context o.e.j.w.WebAppContext@1cb37ee4{/,[file:///home/redin/myProjects/proteiPRver2/proteiRP/src/ru.originald/main/webapp/, file:///home/redin/myProjects/proteiPRver2/proteiRP/target/classes/],STARTING}{file:/home/redin/myProjects/proteiPRver2/proteiRP/target/classes/} 
+javax.servlet.ServletException: dispatcher-config@a130d928==org.springframework.web.servlet.DispatcherServlet,1,false
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:647)
+	at org.eclipse.jetty.servlet.ServletHolder.initialize(ServletHolder.java:405)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:875)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:346)
+	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1379)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1341)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:772)
+	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:259)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:517)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.server.Server.start(Server.java:405)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:106)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:372)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at server.WebServer.start(WebServer.java:42)
+	at server.App.start(App.java:20)
+	at server.App.main(App.java:11)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.cache.interceptor.CacheInterceptor#0': Cannot resolve reference to bean 'cacheManager' while setting bean property 'cacheManager'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'cacheManager' available
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:359)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1531)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1276)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:668)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:682)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:553)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:494)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:138)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:244)
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:626)
+	... 22 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'cacheManager' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:687)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1207)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:284)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:351)
+	... 42 common frames omitted
+10:39:18.133 [main]                      INFO  o.e.j.s.AbstractNCSARequestLog - doStart - Opened /home/redin/myProjects/proteiPRver2/proteiRP/logs/2017_05_04.request.log 
+10:39:18.149 [main]                      INFO  o.e.j.s.ServerConnector - doStart - Started ServerConnector@604b1e1d{HTTP/1.1,[http/1.1]}{0.0.0.0:8082} 
+10:39:18.149 [main]                      INFO  o.e.j.s.Server - doStart - Started @3618ms 
+10:40:50.113 [Thread-0]                  INFO  o.e.j.s.ServerConnector - doStop - Stopped ServerConnector@604b1e1d{HTTP/1.1,[http/1.1]}{0.0.0.0:8082} 
+10:40:50.117 [Thread-0]                  INFO  o.e.j.s.h.ContextHandler - doStop - Stopped o.e.j.w.WebAppContext@1cb37ee4{/,[file:///home/redin/myProjects/proteiPRver2/proteiRP/src/ru.originald/main/webapp/, file:///home/redin/myProjects/proteiPRver2/proteiRP/target/classes/],UNAVAILABLE}{file:/home/redin/myProjects/proteiPRver2/proteiRP/target/classes/} 
