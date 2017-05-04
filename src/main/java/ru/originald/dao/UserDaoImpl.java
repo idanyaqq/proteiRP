@@ -10,11 +10,13 @@ import org.springframework.stereotype.Repository;
  * Created by Danya on 15/04/2017.
  */
 @Repository
-public class UserDaoImpl  implements UserDao{
+public class UserDaoImpl implements UserDao {
 
+//    @Autowired
     private SessionFactory sessionFactory;
 
-    public void setSessionFactory(SessionFactory sessionFactory) {
+    @Autowired
+    public UserDaoImpl(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 
@@ -27,13 +29,13 @@ public class UserDaoImpl  implements UserDao{
     public User getUserInfo(int id) {
         Session session = sessionFactory.getCurrentSession();
 
-        return (User) session.load(User.class,id);
+        return (User) session.load(User.class, id);
     }
 
     public boolean getStatus(int id, boolean status) {
         Session session = sessionFactory.getCurrentSession();
-        User user = (User) session.load(User.class,id);
-        if(user!=null) {
+        User user = (User) session.load(User.class, id);
+        if (user != null) {
             user.setStatus(status);
 
             return user.getStatus();

@@ -19,11 +19,12 @@ import java.net.URL;
  * Created by redin on 5/3/17.
  */
 public class WebServer {
+
     private static final Logger log = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
-    private static final String CONTEXT_PATH ="/";
-    private static final String PROJECT_RELATIVE_PATH_TO_WEBAPP ="src/ru.originald/main/webapp";
-    private static final String TEMP_DIRECTORY ="/src/%s";
+    private static final String CONTEXT_PATH = "/";
+    private static final String PROJECT_RELATIVE_PATH_TO_WEBAPP = "src/main/webapp";
+    private static final String TEMP_DIRECTORY = "/src/%s";
 
     private Server server;
 
@@ -64,7 +65,7 @@ public class WebServer {
         requestLogHandler.setRequestLog(createRequestLog());
 
         HandlerCollection result = new HandlerCollection();
-        result.setHandlers(new Handler[]{ctx,requestLogHandler});
+        result.setHandlers(new Handler[]{ctx, requestLogHandler});
 
         return result;
     }
@@ -86,7 +87,7 @@ public class WebServer {
 
     private SessionHandler createSessionHandler() {
         HashSessionManager sessionManager = new HashSessionManager();
-        sessionManager.setSessionCookie(SessionManager.__DefaultSessionCookie +"_"+port);
+        sessionManager.setSessionCookie(SessionManager.__DefaultSessionCookie + "_" + port);
         sessionManager.setSessionIdPathParameterName(
                 SessionManager.__DefaultSessionIdPathParameterName + "_" + port);
 
@@ -94,25 +95,22 @@ public class WebServer {
 
     }
 
-
-
     private WebAppContext createWebAppContext() {
         WebAppContext ctx = new WebAppContext();
         ctx.setContextPath(CONTEXT_PATH);
         URL location = App.class.getProtectionDomain().getCodeSource().getLocation();
 
-        if(isRunningInJar()) {
+        if (isRunningInJar()) {
             ctx.setWar(location.toExternalForm());
             File dir = new File(String.format(TEMP_DIRECTORY, port));
             if (dir.exists() || dir.mkdir()) {
                 ctx.setTempDirectory(dir);
             }
+        } else {
+            ctx.setWar(App.class.getClassLoader().getResource(".").toExternalForm());
+            ctx.setBaseResource(new ResourceCollection(new String[]{PROJECT_RELATIVE_PATH_TO_WEBAPP, location.toExternalForm()}));
+            log.info("Running in debug environment");
         }
-            else{
-                ctx.setWar(App.class.getClassLoader().getResource(".").toExternalForm());
-                ctx.setBaseResource(new ResourceCollection(new String[]{PROJECT_RELATIVE_PATH_TO_WEBAPP,location.toExternalForm()}));
-                log.info("Running in debug environment");
-            }
 
         return ctx;
     }
@@ -130,4 +128,3 @@ public class WebServer {
     }
 
 }
-
