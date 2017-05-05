@@ -1,18 +1,20 @@
-package service;
+package ru.originld.service;
 
-import model.Role;
+import ru.originld.model.Enums.Role;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import model.User;
-import repository.UserRepository;
+import ru.originld.model.User;
+import ru.originld.repository.UserRepository;
+
+import java.util.List;
 
 /**
  * Created by Danya on 15/04/2017.
  */
 @Service
+@Transactional(readOnly = true)
 public class UserServiceImpl implements UserService {
 
     @Autowired
@@ -35,7 +37,7 @@ public class UserServiceImpl implements UserService {
         return userRepository.saveAndFlush(user);
     }
 
-    @Transactional
+
     public User findById(Long id) {
         return userRepository.findById(id);
     }
@@ -45,8 +47,13 @@ public class UserServiceImpl implements UserService {
         return userRepository.findByUsername(username);
     }
 
-    @Transactional
+
     public void getStatus(Long id, boolean status) {
          userRepository.updateStatus(id, status);
+    }
+
+    @Override
+    public List<User> finduserByCompany(String companyName) {
+        return userRepository.findUsersByCompany(companyName);
     }
 }

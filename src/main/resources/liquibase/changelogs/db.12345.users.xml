@@ -21,8 +21,16 @@
                 <constraints nullable="false"/>
             </column>
             <column name="role" type="VARCHAR"/>
+            <column name="company_id" type="BIGINT">
+            </column>
         </createTable>
         <addDefaultValue tableName="users_test" columnName="role" defaultValue="ROLE_USER"/>
+        <addForeignKeyConstraint baseTableName="users_test"
+        baseColumnNames="company_id"
+        constraintName="users_company_id_fk"
+        referencedTableName="company"
+        referencedColumnNames="id"/>
+
     </changeSet>
 
     <changeSet id="add user" author="redin_d">

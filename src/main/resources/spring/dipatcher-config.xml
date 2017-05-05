@@ -20,8 +20,8 @@
     </mvc:annotation-driven>
 
     <context:annotation-config/>
-    <context:component-scan base-package="controller"/>
-    <context:component-scan base-package="service"/>
+    <context:component-scan base-package="ru.originld.controller"/>
+    <context:component-scan base-package="ru.originld.service"/>
 
     <import resource="security.xml"/>
     <import resource="db.xml"/>

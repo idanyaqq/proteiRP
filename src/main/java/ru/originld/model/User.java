@@ -1,5 +1,7 @@
-package model;
+package ru.originld.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import ru.originld.model.Enums.Role;
 import org.hibernate.annotations.Proxy;
 
 import javax.persistence.*;
@@ -21,6 +23,7 @@ public class User {
     @Column(name = "username")
     private String username;
 
+    @JsonIgnore
     @Column(name = "password")
     private String password;
 
@@ -37,6 +40,18 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Role role;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "company_id")
+    @JsonIgnore
+    private Company company;
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
 
     public Role getRole() {
         return role;

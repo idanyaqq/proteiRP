@@ -1,4 +1,4 @@
-package controller.filters;
+package ru.originld.controller.filters;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.WriteListener;

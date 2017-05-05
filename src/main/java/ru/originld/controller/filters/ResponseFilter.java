@@ -1,7 +1,7 @@
-package controller.filters;
+package ru.originld.controller.filters;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import utils.RestResponse;
+import ru.originld.utils.RestResponse;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;

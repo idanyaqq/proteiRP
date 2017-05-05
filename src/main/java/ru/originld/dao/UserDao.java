@@ -1,6 +1,6 @@
-package dao;
+package ru.originld.dao;
 
-import model.User;
+import ru.originld.model.User;
 
 /**
  * Created by Danya on 15/04/2017.

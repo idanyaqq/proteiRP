@@ -9,7 +9,7 @@
 	http://www.springframework.org/schema/security
 	http://www.springframework.org/schema/security/spring-security.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package="security"/>
+    <context:component-scan base-package="ru.originld.security"/>
 
 
     <http auto-config="true" entry-point-ref="restAuthenticationEntryPoint">
@@ -26,14 +26,14 @@
                     authentication-failure-handler-ref="FailureHandler"/>
         <logout logout-url="/api/logout"/>
     </http>
-    <beans:bean id="restAuthenticationEntryPoint" class="security.RestAuthenticationEntryPoint"/>
+    <beans:bean id="restAuthenticationEntryPoint" class="ru.originld.security.RestAuthenticationEntryPoint"/>
 
-    <beans:bean id="SuccesHandler" class="security.RestAuthenticationSuccessHandler"/>
-    <beans:bean id="FailureHandler" class="security.RestAuthenticationFailureHandler"/>
+    <beans:bean id="SuccesHandler" class="ru.originld.security.RestAuthenticationSuccessHandler"/>
+    <beans:bean id="FailureHandler" class="ru.originld.security.RestAuthenticationFailureHandler"/>
 
 
     <beans:bean id="accessDeniedHandler"
-                class="security.RestAuthenticationAccessDeniedHandler"/>
+                class="ru.originld.security.RestAuthenticationAccessDeniedHandler"/>
 
     <beans:bean id="jdbcUserDetailsManager"
                 class="org.springframework.security.provisioning.JdbcUserDetailsManager"

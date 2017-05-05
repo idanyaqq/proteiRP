@@ -1,4 +1,4 @@
-package controller.filters;
+package ru.originld.controller.filters;
 
 import org.springframework.http.HttpStatus;
 

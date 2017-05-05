@@ -31,23 +31,23 @@ org.springframework.beans.factory.BeanDefinitionStoreException: IOException pars
 	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:346) [jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1379) [jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1341) [jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:772) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.ru.originld.server.handler.ContextHandler.doStart(ContextHandler.java:772) [jetty-ru.originld.server-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:259) [jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:517) [jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.ru.originld.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-ru.originld.server-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at org.eclipse.jetty.server.Server.start(Server.java:405) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.ru.originld.server.Server.start(Server.java:405) [jetty-ru.originld.server-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:106) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at org.eclipse.jetty.server.Server.doStart(Server.java:372) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.ru.originld.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-ru.originld.server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.ru.originld.server.Server.doStart(Server.java:372) [jetty-ru.originld.server-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at server.WebServer.start(WebServer.java:42) [classes/:na]
-	at server.App.start(App.java:20) [classes/:na]
-	at server.App.main(App.java:11) [classes/:na]
+	at ru.originld.server.WebServer.start(WebServer.java:42) [classes/:na]
+	at ru.originld.server.App.start(App.java:20) [classes/:na]
+	at ru.originld.server.App.main(App.java:11) [classes/:na]
 Caused by: java.io.FileNotFoundException: Could not open ServletContext resource [/src/main/resources/spring/dipatcher-config.xml]
 	at org.springframework.web.context.support.ServletContextResource.getInputStream(ServletContextResource.java:141) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
 	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:330) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
@@ -77,23 +77,23 @@ org.springframework.beans.factory.BeanDefinitionStoreException: IOException pars
 	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:346) [jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1379) [jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1341) [jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:772) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.ru.originld.server.handler.ContextHandler.doStart(ContextHandler.java:772) [jetty-ru.originld.server-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:259) [jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:517) [jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.ru.originld.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-ru.originld.server-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at org.eclipse.jetty.server.Server.start(Server.java:405) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.ru.originld.server.Server.start(Server.java:405) [jetty-ru.originld.server-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:106) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at org.eclipse.jetty.server.Server.doStart(Server.java:372) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.ru.originld.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-ru.originld.server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.ru.originld.server.Server.doStart(Server.java:372) [jetty-ru.originld.server-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at server.WebServer.start(WebServer.java:42) [classes/:na]
-	at server.App.start(App.java:20) [classes/:na]
-	at server.App.main(App.java:11) [classes/:na]
+	at ru.originld.server.WebServer.start(WebServer.java:42) [classes/:na]
+	at ru.originld.server.App.start(App.java:20) [classes/:na]
+	at ru.originld.server.App.main(App.java:11) [classes/:na]
 Caused by: java.io.FileNotFoundException: Could not open ServletContext resource [/src/main/resources/spring/dipatcher-config.xml]
 	at org.springframework.web.context.support.ServletContextResource.getInputStream(ServletContextResource.java:141) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
 	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:330) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
@@ -106,23 +106,23 @@ javax.servlet.ServletException: dispatcher-config@a130d928==org.springframework.
 	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:346) ~[jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1379) ~[jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1341) ~[jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:772) ~[jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.ru.originld.server.handler.ContextHandler.doStart(ContextHandler.java:772) ~[jetty-ru.originld.server-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:259) ~[jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:517) ~[jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.ru.originld.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-ru.originld.server-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at org.eclipse.jetty.server.Server.start(Server.java:405) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.ru.originld.server.Server.start(Server.java:405) [jetty-ru.originld.server-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:106) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at org.eclipse.jetty.server.Server.doStart(Server.java:372) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.ru.originld.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-ru.originld.server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.ru.originld.server.Server.doStart(Server.java:372) [jetty-ru.originld.server-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at server.WebServer.start(WebServer.java:42) [classes/:na]
-	at server.App.start(App.java:20) [classes/:na]
-	at server.App.main(App.java:11) [classes/:na]
+	at ru.originld.server.WebServer.start(WebServer.java:42) [classes/:na]
+	at ru.originld.server.App.start(App.java:20) [classes/:na]
+	at ru.originld.server.App.main(App.java:11) [classes/:na]
 Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from ServletContext resource [/src/main/resources/spring/dipatcher-config.xml]; nested exception is java.io.FileNotFoundException: Could not open ServletContext resource [/src/main/resources/spring/dipatcher-config.xml]
 	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:344) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
 	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
@@ -174,18 +174,18 @@ Caused by: java.io.FileNotFoundException: Could not open ServletContext resource
 11:02:07.933 [main]                      INFO  o.h.e.j.i.LobCreatorBuilder - useContextualLobCreation - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException 
 11:02:08.067 [main]                      INFO  o.h.h.i.a.ASTQueryTranslatorFactory - <init> - HHH000397: Using ASTQueryTranslatorFactory 
 11:02:08.348 [main]                      INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default' 
-11:02:08.609 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users/{id}],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> controller.UserController.getStatus(java.lang.Integer,boolean,org.springframework.web.util.UriComponentsBuilder) 
-11:02:08.611 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> controller.UserController.saveUser(model.User,org.springframework.web.util.UriComponentsBuilder) 
-11:02:08.612 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<model.User> controller.UserController.getUserInfo(int) throws java.lang.Exception 
+11:02:08.609 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users/{id}],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> ru.originld.controller.UserController.getStatus(java.lang.Integer,boolean,org.springframework.web.util.UriComponentsBuilder)
+11:02:08.611 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> ru.originld.controller.UserController.saveUser(ru.originld.model.User,org.springframework.web.util.UriComponentsBuilder)
+11:02:08.612 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<ru.originld.model.User> ru.originld.controller.UserController.getUserInfo(int) throws java.lang.Exception
 11:02:08.983 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - initControllerAdviceCache - Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-config-servlet': startup date [Thu May 04 11:02:05 MSK 2017]; root of context hierarchy 
 11:02:09.042 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - initControllerAdviceCache - Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-config-servlet': startup date [Thu May 04 11:02:05 MSK 2017]; root of context hierarchy 
 11:02:09.145 [main]                      INFO  o.h.d.Dialect - <init> - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect 
 11:02:09.146 [main]                      INFO  o.h.e.j.i.LobCreatorBuilder - useContextualLobCreation - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException 
 11:02:09.155 [main]                      INFO  o.h.e.t.i.TransactionFactoryInitiator - initiateService - HHH000399: Using default transaction strategy (direct JDBC transactions) 
 11:02:09.155 [main]                      INFO  o.h.h.i.a.ASTQueryTranslatorFactory - <init> - HHH000397: Using ASTQueryTranslatorFactory 
-11:02:10.613 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users/{id}],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> controller.UserController.getStatus(java.lang.Integer,boolean,org.springframework.web.util.UriComponentsBuilder) 
-11:02:10.614 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> controller.UserController.saveUser(model.User,org.springframework.web.util.UriComponentsBuilder) 
-11:02:10.614 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<model.User> controller.UserController.getUserInfo(int) throws java.lang.Exception 
+11:02:10.613 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users/{id}],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> ru.originld.controller.UserController.getStatus(java.lang.Integer,boolean,org.springframework.web.util.UriComponentsBuilder)
+11:02:10.614 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> ru.originld.controller.UserController.saveUser(ru.originld.model.User,org.springframework.web.util.UriComponentsBuilder)
+11:02:10.614 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<ru.originld.model.User> ru.originld.controller.UserController.getUserInfo(int) throws java.lang.Exception
 11:02:10.642 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - initControllerAdviceCache - Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-config-servlet': startup date [Thu May 04 11:02:05 MSK 2017]; root of context hierarchy 
 11:02:10.719 [main]                      INFO  o.s.w.s.DispatcherServlet - initServletBean - FrameworkServlet 'dispatcher-config': initialization completed in 5360 ms 
 11:02:10.719 [main]                      INFO  o.e.j.s.h.ContextHandler - doStart - Started o.e.j.w.WebAppContext@64b018f3{/,[file:///home/redin/myProjects/proteiPRver2/proteiRP/src/main/webapp/, file:///home/redin/myProjects/proteiPRver2/proteiRP/target/classes/],AVAILABLE}{file:/home/redin/myProjects/proteiPRver2/proteiRP/target/classes/} 
@@ -219,9 +219,9 @@ Caused by: java.io.FileNotFoundException: Could not open ServletContext resource
 11:14:03.057 [main]                      INFO  o.h.e.j.i.LobCreatorBuilder - useContextualLobCreation - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException 
 11:14:03.215 [main]                      INFO  o.h.h.i.a.ASTQueryTranslatorFactory - <init> - HHH000397: Using ASTQueryTranslatorFactory 
 11:14:03.500 [main]                      INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default' 
-11:14:03.889 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users/{id}],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> controller.UserController.getStatus(java.lang.Integer,boolean,org.springframework.web.util.UriComponentsBuilder) 
-11:14:03.891 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> controller.UserController.saveUser(model.User,org.springframework.web.util.UriComponentsBuilder) 
-11:14:03.892 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<model.User> controller.UserController.getUserInfo(int) throws java.lang.Exception 
+11:14:03.889 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users/{id}],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> ru.originld.controller.UserController.getStatus(java.lang.Integer,boolean,org.springframework.web.util.UriComponentsBuilder)
+11:14:03.891 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> ru.originld.controller.UserController.saveUser(ru.originld.model.User,org.springframework.web.util.UriComponentsBuilder)
+11:14:03.892 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<ru.originld.model.User> ru.originld.controller.UserController.getUserInfo(int) throws java.lang.Exception
 11:14:04.659 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - initControllerAdviceCache - Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-config-servlet': startup date [Thu May 04 11:14:00 MSK 2017]; root of context hierarchy 
 11:14:04.708 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - initControllerAdviceCache - Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-config-servlet': startup date [Thu May 04 11:14:00 MSK 2017]; root of context hierarchy 
 11:14:04.806 [main]                      INFO  o.h.d.Dialect - <init> - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect 
@@ -259,23 +259,23 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:346) [jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1379) [jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1341) [jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:772) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.ru.originld.server.handler.ContextHandler.doStart(ContextHandler.java:772) [jetty-ru.originld.server-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:259) [jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:517) [jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.ru.originld.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-ru.originld.server-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at org.eclipse.jetty.server.Server.start(Server.java:405) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.ru.originld.server.Server.start(Server.java:405) [jetty-ru.originld.server-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:106) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at org.eclipse.jetty.server.Server.doStart(Server.java:372) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.ru.originld.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-ru.originld.server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.ru.originld.server.Server.doStart(Server.java:372) [jetty-ru.originld.server-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at server.WebServer.start(WebServer.java:42) [classes/:na]
-	at server.App.start(App.java:20) [classes/:na]
-	at server.App.main(App.java:11) [classes/:na]
+	at ru.originld.server.WebServer.start(WebServer.java:42) [classes/:na]
+	at ru.originld.server.App.start(App.java:20) [classes/:na]
+	at ru.originld.server.App.main(App.java:11) [classes/:na]
 Caused by: liquibase.exception.MigrationFailedException: Migration failed for change set classpath:liquibase/changelogs/db.12345.users.xml::add user::redin_d:
      Reason: liquibase.exception.DatabaseException: ERROR: invalid input syntax for integer: "User phone"
   Position: 116 [Failed SQL: INSERT INTO public.users_test (first_name, last_name, email, phone) VALUES ('User', 'User LastName', 'User email', 'User phone')]
@@ -340,23 +340,23 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:346) [jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1379) [jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1341) [jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:772) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.ru.originld.server.handler.ContextHandler.doStart(ContextHandler.java:772) [jetty-ru.originld.server-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:259) [jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:517) [jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.ru.originld.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-ru.originld.server-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at org.eclipse.jetty.server.Server.start(Server.java:405) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.ru.originld.server.Server.start(Server.java:405) [jetty-ru.originld.server-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:106) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at org.eclipse.jetty.server.Server.doStart(Server.java:372) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.ru.originld.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-ru.originld.server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.ru.originld.server.Server.doStart(Server.java:372) [jetty-ru.originld.server-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at server.WebServer.start(WebServer.java:42) [classes/:na]
-	at server.App.start(App.java:20) [classes/:na]
-	at server.App.main(App.java:11) [classes/:na]
+	at ru.originld.server.WebServer.start(WebServer.java:42) [classes/:na]
+	at ru.originld.server.App.start(App.java:20) [classes/:na]
+	at ru.originld.server.App.main(App.java:11) [classes/:na]
 Caused by: liquibase.exception.MigrationFailedException: Migration failed for change set classpath:liquibase/changelogs/db.12345.users.xml::add user::redin_d:
      Reason: liquibase.exception.DatabaseException: ERROR: invalid input syntax for integer: "User phone"
   Position: 116 [Failed SQL: INSERT INTO public.users_test (first_name, last_name, email, phone) VALUES ('User', 'User LastName', 'User email', 'User phone')]
@@ -402,23 +402,23 @@ javax.servlet.ServletException: dispatcher-config@a130d928==org.springframework.
 	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:346) ~[jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1379) ~[jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1341) ~[jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:772) ~[jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.ru.originld.server.handler.ContextHandler.doStart(ContextHandler.java:772) ~[jetty-ru.originld.server-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:259) ~[jetty-servlet-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:517) ~[jetty-webapp-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.ru.originld.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-ru.originld.server-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at org.eclipse.jetty.server.Server.start(Server.java:405) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.ru.originld.server.Server.start(Server.java:405) [jetty-ru.originld.server-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:106) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at org.eclipse.jetty.server.Server.doStart(Server.java:372) [jetty-server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.ru.originld.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-ru.originld.server-9.3.6.v20151106.jar:9.3.6.v20151106]
+	at org.eclipse.jetty.ru.originld.server.Server.doStart(Server.java:372) [jetty-ru.originld.server-9.3.6.v20151106.jar:9.3.6.v20151106]
 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.3.6.v20151106.jar:9.3.6.v20151106]
-	at server.WebServer.start(WebServer.java:42) [classes/:na]
-	at server.App.start(App.java:20) [classes/:na]
-	at server.App.main(App.java:11) [classes/:na]
+	at ru.originld.server.WebServer.start(WebServer.java:42) [classes/:na]
+	at ru.originld.server.App.start(App.java:20) [classes/:na]
+	at ru.originld.server.App.main(App.java:11) [classes/:na]
 Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in URL [file:/home/redin/myProjects/proteiPRver2/proteiRP/target/classes/spring/dipatcher-config.xml]: Invocation of init method failed; nested exception is liquibase.exception.MigrationFailedException: Migration failed for change set classpath:liquibase/changelogs/db.12345.users.xml::add user::redin_d:
      Reason: liquibase.exception.DatabaseException: ERROR: invalid input syntax for integer: "User phone"
   Position: 116 [Failed SQL: INSERT INTO public.users_test (first_name, last_name, email, phone) VALUES ('User', 'User LastName', 'User email', 'User phone')]
@@ -505,18 +505,18 @@ Caused by: org.postgresql.util.PSQLException: ERROR: invalid input syntax for in
 11:15:01.363 [main]                      INFO  o.h.e.j.i.LobCreatorBuilder - useContextualLobCreation - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException 
 11:15:01.510 [main]                      INFO  o.h.h.i.a.ASTQueryTranslatorFactory - <init> - HHH000397: Using ASTQueryTranslatorFactory 
 11:15:01.780 [main]                      INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default' 
-11:15:02.107 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users/{id}],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> controller.UserController.getStatus(java.lang.Integer,boolean,org.springframework.web.util.UriComponentsBuilder) 
-11:15:02.109 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> controller.UserController.saveUser(model.User,org.springframework.web.util.UriComponentsBuilder) 
-11:15:02.110 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<model.User> controller.UserController.getUserInfo(int) throws java.lang.Exception 
+11:15:02.107 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users/{id}],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> ru.originld.controller.UserController.getStatus(java.lang.Integer,boolean,org.springframework.web.util.UriComponentsBuilder)
+11:15:02.109 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> ru.originld.controller.UserController.saveUser(ru.originld.model.User,org.springframework.web.util.UriComponentsBuilder)
+11:15:02.110 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<ru.originld.model.User> ru.originld.controller.UserController.getUserInfo(int) throws java.lang.Exception
 11:15:02.646 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - initControllerAdviceCache - Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-config-servlet': startup date [Thu May 04 11:14:58 MSK 2017]; root of context hierarchy 
 11:15:02.706 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - initControllerAdviceCache - Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-config-servlet': startup date [Thu May 04 11:14:58 MSK 2017]; root of context hierarchy 
 11:15:02.799 [main]                      INFO  o.h.d.Dialect - <init> - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect 
 11:15:02.801 [main]                      INFO  o.h.e.j.i.LobCreatorBuilder - useContextualLobCreation - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException 
 11:15:02.807 [main]                      INFO  o.h.e.t.i.TransactionFactoryInitiator - initiateService - HHH000399: Using default transaction strategy (direct JDBC transactions) 
 11:15:02.808 [main]                      INFO  o.h.h.i.a.ASTQueryTranslatorFactory - <init> - HHH000397: Using ASTQueryTranslatorFactory 
-11:15:04.426 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users/{id}],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> controller.UserController.getStatus(java.lang.Integer,boolean,org.springframework.web.util.UriComponentsBuilder) 
-11:15:04.427 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> controller.UserController.saveUser(model.User,org.springframework.web.util.UriComponentsBuilder) 
-11:15:04.428 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<model.User> controller.UserController.getUserInfo(int) throws java.lang.Exception 
+11:15:04.426 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users/{id}],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> ru.originld.controller.UserController.getStatus(java.lang.Integer,boolean,org.springframework.web.util.UriComponentsBuilder)
+11:15:04.427 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> ru.originld.controller.UserController.saveUser(ru.originld.model.User,org.springframework.web.util.UriComponentsBuilder)
+11:15:04.428 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - register - Mapped "{[/users/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<ru.originld.model.User> ru.originld.controller.UserController.getUserInfo(int) throws java.lang.Exception
 11:15:04.465 [main]                      INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - initControllerAdviceCache - Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-config-servlet': startup date [Thu May 04 11:14:58 MSK 2017]; root of context hierarchy 
 11:15:04.611 [main]                      INFO  o.s.w.s.DispatcherServlet - initServletBean - FrameworkServlet 'dispatcher-config': initialization completed in 5922 ms 
 11:15:04.612 [main]                      INFO  o.e.j.s.h.ContextHandler - doStart - Started o.e.j.w.WebAppContext@53747c4a{/,[file:///home/redin/myProjects/proteiPRver2/proteiRP/src/main/webapp/, file:///home/redin/myProjects/proteiPRver2/proteiRP/target/classes/],AVAILABLE}{file:/home/redin/myProjects/proteiPRver2/proteiRP/target/classes/} 

@@ -1,4 +1,4 @@
-package controller;
+package ru.originld.controller;
 
 import org.hibernate.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,8 +8,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.util.UriComponentsBuilder;
-import model.User;
-import service.UserService;
+import ru.originld.model.User;
+import ru.originld.service.UserService;
+
+import java.util.List;
 
 /**
  * Created by Danya on 15/04/2017.
@@ -22,6 +24,13 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+
+    @RequestMapping(value = "/users/companies/{companyName}", method = RequestMethod.GET)
+    public ResponseEntity<List<User>> getUsersByCompany(@PathVariable("companyName") String companyName){
+        List<User> userList = userService.finduserByCompany(companyName);
+        return new ResponseEntity<>(userList,HttpStatus.OK);
+    }
 
 
 

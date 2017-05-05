@@ -1,4 +1,4 @@
-package server;
+package ru.originld.server;
 
 import org.eclipse.jetty.server.*;
 import org.eclipse.jetty.server.handler.HandlerCollection;
@@ -9,7 +9,7 @@ import org.eclipse.jetty.util.resource.ResourceCollection;
 import org.eclipse.jetty.webapp.WebAppContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import utils.JettyPropertyReader;
+import ru.originld.utils.JettyPropertyReader;
 
 import java.io.File;
 import java.lang.invoke.MethodHandles;

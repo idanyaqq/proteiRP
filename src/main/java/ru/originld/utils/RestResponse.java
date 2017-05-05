@@ -1,4 +1,4 @@
-package utils;
+package ru.originld.utils;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonRawValue;

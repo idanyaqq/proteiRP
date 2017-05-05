@@ -1,7 +1,7 @@
-package dao;
+package ru.originld.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import model.User;
+import ru.originld.model.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;

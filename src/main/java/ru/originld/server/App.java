@@ -1,4 +1,4 @@
-package server;
+package ru.originld.server;
 
 /**
  * Created by redin on 5/3/17.

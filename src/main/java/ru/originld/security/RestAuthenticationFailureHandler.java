@@ -1,4 +1,4 @@
-package security;
+package ru.originld.security;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
