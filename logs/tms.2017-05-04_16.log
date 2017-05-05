@@ -1573,10 +1573,10 @@
 16:06:18.447 [main]                      DEBUG o.h.c.a.SimpleValueBinder - make - building SimpleValue for password 
 16:06:18.448 [main]                      DEBUG o.h.c.a.PropertyBinder - makeProperty - Building property password 
 16:06:18.448 [main]                      DEBUG o.h.c.Ejb3Column - bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users_test), mappingColumn=phone, insertable=true, updatable=true, unique=false} 
-16:06:18.448 [main]                      DEBUG o.h.c.a.PropertyBinder - makePropertyAndValue - MetadataSourceProcessor property phoneNumber with lazy=false 
-16:06:18.449 [main]                      DEBUG o.h.c.AbstractPropertyHolder - resolveAttributeConverterDefinition - Attempting to locate auto-apply AttributeConverter for property [model.User:phoneNumber] 
-16:06:18.449 [main]                      DEBUG o.h.c.a.SimpleValueBinder - make - building SimpleValue for phoneNumber 
-16:06:18.449 [main]                      DEBUG o.h.c.a.PropertyBinder - makeProperty - Building property phoneNumber 
+16:06:18.448 [main]                      DEBUG o.h.c.a.PropertyBinder - makePropertyAndValue - MetadataSourceProcessor property phone with lazy=false
+16:06:18.449 [main]                      DEBUG o.h.c.AbstractPropertyHolder - resolveAttributeConverterDefinition - Attempting to locate auto-apply AttributeConverter for property [model.User:phone]
+16:06:18.449 [main]                      DEBUG o.h.c.a.SimpleValueBinder - make - building SimpleValue for phone
+16:06:18.449 [main]                      DEBUG o.h.c.a.PropertyBinder - makeProperty - Building property phone
 16:06:18.449 [main]                      DEBUG o.h.c.Ejb3Column - bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users_test), mappingColumn=role, insertable=true, updatable=true, unique=false} 
 16:06:18.450 [main]                      DEBUG o.h.c.a.PropertyBinder - makePropertyAndValue - MetadataSourceProcessor property role with lazy=false 
 16:06:18.451 [main]                      DEBUG o.h.c.AbstractPropertyHolder - resolveAttributeConverterDefinition - Attempting to locate auto-apply AttributeConverter for property [model.User:role] 
@@ -1595,7 +1595,7 @@
 16:06:18.460 [main]                      DEBUG o.h.c.a.SimpleValueBinder - fillSimpleValue - Starting fillSimpleValue for id 
 16:06:18.461 [main]                      DEBUG o.h.c.a.SimpleValueBinder - fillSimpleValue - Starting fillSimpleValue for email 
 16:06:18.462 [main]                      DEBUG o.h.c.a.SimpleValueBinder - fillSimpleValue - Starting fillSimpleValue for password 
-16:06:18.463 [main]                      DEBUG o.h.c.a.SimpleValueBinder - fillSimpleValue - Starting fillSimpleValue for phoneNumber 
+16:06:18.463 [main]                      DEBUG o.h.c.a.SimpleValueBinder - fillSimpleValue - Starting fillSimpleValue for phone
 16:06:18.463 [main]                      DEBUG o.h.c.a.SimpleValueBinder - fillSimpleValue - Starting fillSimpleValue for role 
 16:06:18.463 [main]                      DEBUG o.e.j.w.WebAppClassLoader - loadClass - loadClass(org.hibernate.type.EnumType) system=false server=false cl=WebAppClassLoader=User Manager@7f13d6e 
 16:06:18.463 [main]                      DEBUG o.e.j.w.WebAppClassLoader - loadClass - loadedClass(org.hibernate.type.EnumType)==class org.hibernate.type.EnumType from=sun.misc.Launcher$AppClassLoader@18b4aac2 tried_parent=true 
@@ -1679,7 +1679,7 @@
 16:06:18.745 [main]                      DEBUG o.h.l.p.b.i.s.QuerySpacesImpl - registerQuerySpace - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4441d567] 
 16:06:18.746 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : email 
 16:06:18.746 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : password 
-16:06:18.746 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phoneNumber 
+16:06:18.746 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phone
 16:06:18.747 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : role 
 16:06:18.747 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : status 
 16:06:18.747 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : username 
@@ -1698,7 +1698,7 @@
 16:06:18.768 [main]                      DEBUG o.h.l.p.b.i.s.QuerySpacesImpl - registerQuerySpace - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6972c30a] 
 16:06:18.768 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : email 
 16:06:18.768 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : password 
-16:06:18.769 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phoneNumber 
+16:06:18.769 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phone
 16:06:18.769 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : role 
 16:06:18.769 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : status 
 16:06:18.769 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : username 
@@ -1717,7 +1717,7 @@
 16:06:18.771 [main]                      DEBUG o.h.l.p.b.i.s.QuerySpacesImpl - registerQuerySpace - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1ab6718] 
 16:06:18.771 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : email 
 16:06:18.771 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : password 
-16:06:18.772 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phoneNumber 
+16:06:18.772 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phone
 16:06:18.772 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : role 
 16:06:18.772 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : status 
 16:06:18.772 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : username 
@@ -1736,7 +1736,7 @@
 16:06:18.773 [main]                      DEBUG o.h.l.p.b.i.s.QuerySpacesImpl - registerQuerySpace - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@460510aa] 
 16:06:18.774 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : email 
 16:06:18.774 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : password 
-16:06:18.774 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phoneNumber 
+16:06:18.774 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phone
 16:06:18.774 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : role 
 16:06:18.774 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : status 
 16:06:18.775 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : username 
@@ -1755,7 +1755,7 @@
 16:06:18.776 [main]                      DEBUG o.h.l.p.b.i.s.QuerySpacesImpl - registerQuerySpace - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6fd77352] 
 16:06:18.777 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : email 
 16:06:18.777 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : password 
-16:06:18.777 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phoneNumber 
+16:06:18.777 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phone
 16:06:18.777 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : role 
 16:06:18.777 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : status 
 16:06:18.777 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : username 
@@ -1774,7 +1774,7 @@
 16:06:18.779 [main]                      DEBUG o.h.l.p.b.i.s.QuerySpacesImpl - registerQuerySpace - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@3f672204] 
 16:06:18.779 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : email 
 16:06:18.779 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : password 
-16:06:18.779 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phoneNumber 
+16:06:18.779 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phone
 16:06:18.779 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : role 
 16:06:18.779 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : status 
 16:06:18.780 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : username 
@@ -1793,7 +1793,7 @@
 16:06:18.781 [main]                      DEBUG o.h.l.p.b.i.s.QuerySpacesImpl - registerQuerySpace - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2c2db130] 
 16:06:18.781 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : email 
 16:06:18.781 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : password 
-16:06:18.781 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phoneNumber 
+16:06:18.781 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phone
 16:06:18.782 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : role 
 16:06:18.782 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : status 
 16:06:18.782 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : username 
@@ -1812,7 +1812,7 @@
 16:06:18.783 [main]                      DEBUG o.h.l.p.b.i.s.QuerySpacesImpl - registerQuerySpace - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@348d18a3] 
 16:06:18.783 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : email 
 16:06:18.783 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : password 
-16:06:18.784 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phoneNumber 
+16:06:18.784 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phone
 16:06:18.784 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : role 
 16:06:18.784 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : status 
 16:06:18.784 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : username 
@@ -1831,7 +1831,7 @@
 16:06:18.785 [main]                      DEBUG o.h.l.p.b.i.s.QuerySpacesImpl - registerQuerySpace - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2d000e80] 
 16:06:18.786 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : email 
 16:06:18.786 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : password 
-16:06:18.786 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phoneNumber 
+16:06:18.786 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phone
 16:06:18.786 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : role 
 16:06:18.786 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : status 
 16:06:18.786 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : username 
@@ -1850,7 +1850,7 @@
 16:06:18.788 [main]                      DEBUG o.h.l.p.b.i.s.QuerySpacesImpl - registerQuerySpace - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@20e6c4dc] 
 16:06:18.788 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : email 
 16:06:18.788 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : password 
-16:06:18.788 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phoneNumber 
+16:06:18.788 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phone
 16:06:18.788 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : role 
 16:06:18.789 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : status 
 16:06:18.789 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : username 
@@ -1869,7 +1869,7 @@
 16:06:18.790 [main]                      DEBUG o.h.l.p.b.i.s.QuerySpacesImpl - registerQuerySpace - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4d2a1da3] 
 16:06:18.790 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : email 
 16:06:18.790 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : password 
-16:06:18.790 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phoneNumber 
+16:06:18.790 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phone
 16:06:18.791 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : role 
 16:06:18.791 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : status 
 16:06:18.791 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : username 
@@ -2758,10 +2758,10 @@
 16:06:19.917 [main]                      DEBUG o.h.c.a.SimpleValueBinder - make - building SimpleValue for password 
 16:06:19.917 [main]                      DEBUG o.h.c.a.PropertyBinder - makeProperty - Building property password 
 16:06:19.917 [main]                      DEBUG o.h.c.Ejb3Column - bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users_test), mappingColumn=phone, insertable=true, updatable=true, unique=false} 
-16:06:19.918 [main]                      DEBUG o.h.c.a.PropertyBinder - makePropertyAndValue - MetadataSourceProcessor property phoneNumber with lazy=false 
-16:06:19.918 [main]                      DEBUG o.h.c.AbstractPropertyHolder - resolveAttributeConverterDefinition - Attempting to locate auto-apply AttributeConverter for property [model.User:phoneNumber] 
-16:06:19.918 [main]                      DEBUG o.h.c.a.SimpleValueBinder - make - building SimpleValue for phoneNumber 
-16:06:19.918 [main]                      DEBUG o.h.c.a.PropertyBinder - makeProperty - Building property phoneNumber 
+16:06:19.918 [main]                      DEBUG o.h.c.a.PropertyBinder - makePropertyAndValue - MetadataSourceProcessor property phone with lazy=false
+16:06:19.918 [main]                      DEBUG o.h.c.AbstractPropertyHolder - resolveAttributeConverterDefinition - Attempting to locate auto-apply AttributeConverter for property [model.User:phone]
+16:06:19.918 [main]                      DEBUG o.h.c.a.SimpleValueBinder - make - building SimpleValue for phone
+16:06:19.918 [main]                      DEBUG o.h.c.a.PropertyBinder - makeProperty - Building property phone
 16:06:19.919 [main]                      DEBUG o.h.c.Ejb3Column - bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users_test), mappingColumn=role, insertable=true, updatable=true, unique=false} 
 16:06:19.919 [main]                      DEBUG o.h.c.a.PropertyBinder - makePropertyAndValue - MetadataSourceProcessor property role with lazy=false 
 16:06:19.919 [main]                      DEBUG o.h.c.AbstractPropertyHolder - resolveAttributeConverterDefinition - Attempting to locate auto-apply AttributeConverter for property [model.User:role] 
@@ -2780,7 +2780,7 @@
 16:06:19.924 [main]                      DEBUG o.h.c.a.SimpleValueBinder - fillSimpleValue - Starting fillSimpleValue for id 
 16:06:19.924 [main]                      DEBUG o.h.c.a.SimpleValueBinder - fillSimpleValue - Starting fillSimpleValue for email 
 16:06:19.924 [main]                      DEBUG o.h.c.a.SimpleValueBinder - fillSimpleValue - Starting fillSimpleValue for password 
-16:06:19.924 [main]                      DEBUG o.h.c.a.SimpleValueBinder - fillSimpleValue - Starting fillSimpleValue for phoneNumber 
+16:06:19.924 [main]                      DEBUG o.h.c.a.SimpleValueBinder - fillSimpleValue - Starting fillSimpleValue for phone
 16:06:19.925 [main]                      DEBUG o.h.c.a.SimpleValueBinder - fillSimpleValue - Starting fillSimpleValue for role 
 16:06:19.925 [main]                      DEBUG o.e.j.w.WebAppClassLoader - loadClass - loadClass(org.hibernate.type.EnumType) system=false server=false cl=WebAppClassLoader=User Manager@7f13d6e 
 16:06:19.925 [main]                      DEBUG o.e.j.w.WebAppClassLoader - loadClass - loadedClass(org.hibernate.type.EnumType)==class org.hibernate.type.EnumType from=sun.misc.Launcher$AppClassLoader@18b4aac2 tried_parent=true 
@@ -2870,7 +2870,7 @@
 16:06:19.961 [main]                      DEBUG o.h.l.p.b.i.s.QuerySpacesImpl - registerQuerySpace - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6fa0450e] 
 16:06:19.961 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : email 
 16:06:19.961 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : password 
-16:06:19.962 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phoneNumber 
+16:06:19.962 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phone
 16:06:19.962 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : role 
 16:06:19.962 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : status 
 16:06:19.962 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : username 
@@ -2889,7 +2889,7 @@
 16:06:19.966 [main]                      DEBUG o.h.l.p.b.i.s.QuerySpacesImpl - registerQuerySpace - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@51ec2856] 
 16:06:19.966 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : email 
 16:06:19.966 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : password 
-16:06:19.966 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phoneNumber 
+16:06:19.966 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phone
 16:06:19.967 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : role 
 16:06:19.967 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : status 
 16:06:19.967 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : username 
@@ -2908,7 +2908,7 @@
 16:06:19.971 [main]                      DEBUG o.h.l.p.b.i.s.QuerySpacesImpl - registerQuerySpace - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1caa9eb6] 
 16:06:19.971 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : email 
 16:06:19.972 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : password 
-16:06:19.972 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phoneNumber 
+16:06:19.972 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phone
 16:06:19.972 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : role 
 16:06:19.972 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : status 
 16:06:19.972 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : username 
@@ -2927,7 +2927,7 @@
 16:06:19.974 [main]                      DEBUG o.h.l.p.b.i.s.QuerySpacesImpl - registerQuerySpace - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2fcd7d3f] 
 16:06:19.974 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : email 
 16:06:19.974 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : password 
-16:06:19.974 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phoneNumber 
+16:06:19.974 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phone
 16:06:19.974 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : role 
 16:06:19.974 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : status 
 16:06:19.975 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : username 
@@ -2946,7 +2946,7 @@
 16:06:19.976 [main]                      DEBUG o.h.l.p.b.i.s.QuerySpacesImpl - registerQuerySpace - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6f70a21b] 
 16:06:19.976 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : email 
 16:06:19.977 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : password 
-16:06:19.977 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phoneNumber 
+16:06:19.977 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phone
 16:06:19.977 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : role 
 16:06:19.979 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : status 
 16:06:19.980 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : username 
@@ -2965,7 +2965,7 @@
 16:06:19.983 [main]                      DEBUG o.h.l.p.b.i.s.QuerySpacesImpl - registerQuerySpace - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2e869098] 
 16:06:19.983 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : email 
 16:06:19.984 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : password 
-16:06:19.984 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phoneNumber 
+16:06:19.984 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phone
 16:06:19.984 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : role 
 16:06:19.985 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : status 
 16:06:19.985 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : username 
@@ -2984,7 +2984,7 @@
 16:06:19.988 [main]                      DEBUG o.h.l.p.b.i.s.QuerySpacesImpl - registerQuerySpace - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5d497a91] 
 16:06:19.988 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : email 
 16:06:19.988 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : password 
-16:06:19.989 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phoneNumber 
+16:06:19.989 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phone
 16:06:19.989 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : role 
 16:06:19.989 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : status 
 16:06:19.990 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : username 
@@ -3003,7 +3003,7 @@
 16:06:19.992 [main]                      DEBUG o.h.l.p.b.i.s.QuerySpacesImpl - registerQuerySpace - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1c8f6a90] 
 16:06:19.993 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : email 
 16:06:19.993 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : password 
-16:06:19.993 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phoneNumber 
+16:06:19.993 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phone
 16:06:19.994 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : role 
 16:06:19.994 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : status 
 16:06:19.994 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : username 
@@ -3022,7 +3022,7 @@
 16:06:19.996 [main]                      DEBUG o.h.l.p.b.i.s.QuerySpacesImpl - registerQuerySpace - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@265bd546] 
 16:06:19.997 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : email 
 16:06:19.997 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : password 
-16:06:19.997 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phoneNumber 
+16:06:19.997 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phone
 16:06:19.998 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : role 
 16:06:19.998 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : status 
 16:06:19.998 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : username 
@@ -3041,7 +3041,7 @@
 16:06:20.002 [main]                      DEBUG o.h.l.p.b.i.s.QuerySpacesImpl - registerQuerySpace - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7e0bc8a3] 
 16:06:20.002 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : email 
 16:06:20.002 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : password 
-16:06:20.003 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phoneNumber 
+16:06:20.003 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phone
 16:06:20.003 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : role 
 16:06:20.004 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : status 
 16:06:20.004 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : username 
@@ -3060,7 +3060,7 @@
 16:06:20.007 [main]                      DEBUG o.h.l.p.b.i.s.QuerySpacesImpl - registerQuerySpace - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@33063f5b] 
 16:06:20.007 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : email 
 16:06:20.007 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : password 
-16:06:20.008 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phoneNumber 
+16:06:20.008 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : phone
 16:06:20.009 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : role 
 16:06:20.009 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : status 
 16:06:20.009 [main]                      DEBUG o.h.p.w.s.MetamodelGraphWalker - visitAttributeDefinition - Visiting attribute path : username 

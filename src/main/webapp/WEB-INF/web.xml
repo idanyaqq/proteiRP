@@ -20,7 +20,7 @@
 
     <servlet-mapping>
         <servlet-name>dispatcher-config</servlet-name>
-        <url-pattern>/rest/*</url-pattern>
+        <url-pattern>/api/*</url-pattern>
     </servlet-mapping>
 
     <filter>
@@ -29,6 +29,6 @@
     </filter>
     <filter-mapping>
         <filter-name>springSecurityFilterChain</filter-name>
-        <url-pattern>/rest/*</url-pattern>
+        <url-pattern>/api/*</url-pattern>
     </filter-mapping>
 </web-app>

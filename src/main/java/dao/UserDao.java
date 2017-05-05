@@ -7,8 +7,8 @@ import model.User;
  */
 public interface UserDao {
 
-    Integer saveUser(User user);
-    User getUserInfo(int id);
+    Long saveUser(User user);
+    User getUserInfo(Long id);
     User getUserByUsername(String username);
-    boolean getStatus(int id, boolean status);
+    boolean getStatus(Long id, boolean status);
 }

@@ -17,7 +17,7 @@ import service.UserService;
 
 @RestController
 @EnableWebMvc
-@RequestMapping("/user")
+//@RequestMapping("/user")
 public class UserController {
 
     @Autowired
@@ -25,19 +25,19 @@ public class UserController {
 
 
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/users",method = RequestMethod.POST)
     public ResponseEntity<Void> saveUser(@RequestBody User user, UriComponentsBuilder uriComponentsBuilder) {
         userService.saveUser(user);
         HttpHeaders httpHeaders = new HttpHeaders();
-        httpHeaders.setLocation(uriComponentsBuilder.path("/user/{id}").buildAndExpand(user.getId()).toUri());
+        httpHeaders.setLocation(uriComponentsBuilder.path("/users/{id}").buildAndExpand(user.getId()).toUri());
         return new ResponseEntity<Void>(httpHeaders, HttpStatus.CREATED);
     }
 
-    @RequestMapping(value = "{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/users/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<User> getUserInfo(@PathVariable("id") int id) throws Exception {
+    public ResponseEntity<User> getUserInfo(@PathVariable("id") Long id) throws Exception {
         try {
-            User user = userService.getUserInfo(id);
+            User user = userService.findById(id);
             return new ResponseEntity<User>(user, HttpStatus.OK);
         } catch (ObjectNotFoundException e) {
             return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
@@ -45,14 +45,15 @@ public class UserController {
 
     }
 
-    @RequestMapping(value = "{id}", method = RequestMethod.POST)
-    public ResponseEntity<Void> getStatus(@PathVariable("id") Integer id, @RequestParam("status") boolean status, UriComponentsBuilder ucBuilder) {
+    @RequestMapping(value = "/users/{id}", method = RequestMethod.POST)
+    public ResponseEntity<Void> getStatus(@PathVariable("id") Long id, @RequestParam("status") boolean status, UriComponentsBuilder ucBuilder) {
         try {
-            User currentUser = userService.getUserInfo(id);
+            User currentUser = userService.findById(id);
             boolean currentStatus = currentUser.getStatus();
-            boolean updatedStatus = userService.getStatus(id, status);
-            HttpHeaders httpHeaders = new HttpHeaders();
-            httpHeaders.setLocation(ucBuilder.path("/user/{id}?previousStatus=" + (currentStatus ? "online" : "offline") + "&CurrentStatus=" + (updatedStatus ? "online" : "offline"))
+            userService.getStatus(id, status);
+            boolean updatedStatus = userService.findById(id).getStatus();
+                    HttpHeaders httpHeaders = new HttpHeaders();
+            httpHeaders.setLocation(ucBuilder.path("/users/{id}?previousStatus=" + (currentStatus ? "online" : "offline") + "&CurrentStatus=" + (updatedStatus ? "online" : "offline"))
                     .buildAndExpand(currentUser.getId())
                     .toUri());
 

@@ -11,24 +11,26 @@
 
     <context:component-scan base-package="security"/>
 
-    <http use-expressions="true" entry-point-ref="restAuthenticationEntryPoint">
-        <intercept-url pattern="/rest/**" access="ROLE_USER"/>
-        <access-denied-handler ref="accessDeniedHandler"/>
-        <!--<custom-filter ref="responseFilter" position="FIRST"/>-->
-        <!--<intercept-url pattern="/rest/*" access="isAuthenticated()"/>-->
-        <logout/>
 
-        <form-login login-processing-url="/rest/login" username-parameter="username" password-parameter="password"
-                authentication-success-handler-ref="SuccesHandler"
-                authentication-failure-handler-ref="FailureHandler"/>
+    <http auto-config="true" entry-point-ref="restAuthenticationEntryPoint">
+        <csrf disabled="true"/>
+        <access-denied-handler ref="accessDeniedHandler"/>
+
+        <intercept-url pattern="/api/users/**" access="isAuthenticated()"/>
+
+
+        <form-login login-processing-url="/api/login"
+                    username-parameter="username"
+                    password-parameter="password"
+                    authentication-success-handler-ref="SuccesHandler"
+                    authentication-failure-handler-ref="FailureHandler"/>
+        <logout logout-url="/api/logout"/>
     </http>
     <beans:bean id="restAuthenticationEntryPoint" class="security.RestAuthenticationEntryPoint"/>
 
     <beans:bean id="SuccesHandler" class="security.RestAuthenticationSuccessHandler"/>
     <beans:bean id="FailureHandler" class="security.RestAuthenticationFailureHandler"/>
 
-    <!--<beans:bean id="responseFilter"-->
-    <!--class="controller.filters.ResponseFilter"/>-->
 
     <beans:bean id="accessDeniedHandler"
                 class="security.RestAuthenticationAccessDeniedHandler"/>
@@ -36,11 +38,11 @@
     <beans:bean id="jdbcUserDetailsManager"
                 class="org.springframework.security.provisioning.JdbcUserDetailsManager"
                 p:usersByUsernameQuery="
-                    SELECT username, password
+                    SELECT username, password, 'true'
                     FROM users_test
                     WHERE username=?;"
                 p:authoritiesByUsernameQuery="
-                    SELECT username, role
+                    SELECT username, password
                     FROM users_test
                     WHERE username=?;">
         <beans:property name="dataSource" ref="dataSource"/>
@@ -53,21 +55,22 @@
     </beans:bean>
 
 
-    <!--<beans:bean id="preauthAuthProvider"-->
-                <!--class="org.springframework.security.web.authentication.preauth.PreAuthenticatedAuthenticationProvider">-->
-        <!--<beans:property name="preAuthenticatedUserDetailsService">-->
-            <!--<beans:bean class="org.springframework.security.core.userdetails.UserDetailsByNameServiceWrapper">-->
-                <!--<beans:property name="userDetailsService" ref="jdbcUserDetailsManager"/>-->
-            <!--</beans:bean>-->
-        <!--</beans:property>-->
-    <!--</beans:bean>-->
+    <beans:bean id="preauthAuthProvider"
+                class="org.springframework.security.web.authentication.preauth.PreAuthenticatedAuthenticationProvider">
+        <beans:property name="preAuthenticatedUserDetailsService">
+            <beans:bean class="org.springframework.security.core.userdetails.UserDetailsByNameServiceWrapper">
+                <beans:property name="userDetailsService" ref="jdbcUserDetailsManager"/>
+            </beans:bean>
+        </beans:property>
+    </beans:bean>
 
 
     <!-- Authentication manager -->
     <authentication-manager alias="authenticationManager">
         <authentication-provider user-service-ref="jdbcUserDetailsManager">
-            <!--<password-encoder ref="bcrypt"/>-->
+            <password-encoder ref="bcrypt"/>
         </authentication-provider>
     </authentication-manager>
+
 
 </beans:beans>

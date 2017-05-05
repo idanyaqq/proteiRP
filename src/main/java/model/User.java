@@ -16,7 +16,7 @@ public class User {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column(name = "username")
     private String username;
@@ -28,12 +28,13 @@ public class User {
     private String email;
 
     @Column(name = "phone")
-    private Long phoneNumber;
+    private Long phone;
 
     @Column(name = "status")
     private boolean status;
 
     @Column(name = "role")
+    @Enumerated(EnumType.STRING)
     private Role role;
 
 
@@ -53,7 +54,7 @@ public class User {
         this.status = status;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
@@ -81,12 +82,12 @@ public class User {
         this.email = email;
     }
 
-    public Long getPhoneNumber() {
-        return phoneNumber;
+    public Long getPhone() {
+        return phone;
     }
 
-    public void setPhoneNumber(Long phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhone(Long phone) {
+        this.phone = phone;
     }
 
     @Override
@@ -96,7 +97,7 @@ public class User {
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
-                ", phoneNumber=" + phoneNumber +
+                ", phone=" + phone +
                 ", status=" + status +
                 ", role=" + role +
                 '}';

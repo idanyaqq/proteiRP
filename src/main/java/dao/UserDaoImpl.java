@@ -19,14 +19,14 @@ public class UserDaoImpl  implements UserDao{
 //    }
 
     @Override
-    public Integer saveUser(User user) {
+    public Long saveUser(User user) {
         Session session = sessionFactory.getCurrentSession();
         session.save(user);
         return user.getId();
     }
 
     @Override
-    public User getUserInfo(int id) {
+    public User getUserInfo(Long id) {
         Session session = sessionFactory.getCurrentSession();
 
         return (User) session.load(User.class,id);
@@ -39,7 +39,7 @@ public class UserDaoImpl  implements UserDao{
     }
 
     @Override
-    public boolean getStatus(int id, boolean status) {
+    public boolean getStatus(Long id, boolean status) {
         Session session = sessionFactory.getCurrentSession();
         User user = (User) session.load(User.class,id);
         if(user!=null) {
