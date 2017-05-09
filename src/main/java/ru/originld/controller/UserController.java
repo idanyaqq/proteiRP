@@ -2,6 +2,7 @@ package ru.originld.controller;
 
 import org.hibernate.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,10 +26,15 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @RequestMapping(value = "users/passport/{passportNumber}",method = RequestMethod.GET)
+    public ResponseEntity<User> findUserByPassportNumber(@PathVariable("passportNumber") Long passportNumber){
+        User user = userService.findByPassportNUmber(passportNumber);
+        return (user!=null?new ResponseEntity<User>(user,HttpStatus.OK):new ResponseEntity<User>(HttpStatus.NOT_FOUND));
+    }
 
     @RequestMapping(value = "/users/companies/{companyName}", method = RequestMethod.GET)
     public ResponseEntity<List<User>> getUsersByCompany(@PathVariable("companyName") String companyName){
-        List<User> userList = userService.finduserByCompany(companyName);
+        List<User> userList = userService.findUserByCompany(companyName);
         return new ResponseEntity<>(userList,HttpStatus.OK);
     }
 

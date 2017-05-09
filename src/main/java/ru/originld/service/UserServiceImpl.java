@@ -53,7 +53,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> finduserByCompany(String companyName) {
+    public List<User> findUserByCompany(String companyName) {
         return userRepository.findUsersByCompany(companyName);
+    }
+
+    @Override
+    public User findByPassportNUmber(long passportNubmer) {
+        return userRepository.findByPassportNumber(passportNubmer);
     }
 }

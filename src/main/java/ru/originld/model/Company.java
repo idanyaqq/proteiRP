@@ -28,7 +28,6 @@ public class Company {
     private long phone;
 
     @OneToMany(mappedBy = "company",fetch = FetchType.EAGER)
-    // for what is that ?
     private List<User> users;
 
 //    private Company(Builder builder) {

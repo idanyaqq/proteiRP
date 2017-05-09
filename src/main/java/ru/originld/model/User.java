@@ -45,6 +45,11 @@ public class User {
     @JsonIgnore
     private Company company;
 
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "passport_number")
+    @JsonIgnore
+    private Passport passport;
+
     public Company getCompany() {
         return company;
     }
@@ -105,6 +110,14 @@ public class User {
         this.phone = phone;
     }
 
+    public Passport getPassport() {
+        return passport;
+    }
+
+    public void setPassport(Passport passport) {
+        this.passport = passport;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -115,9 +128,8 @@ public class User {
                 ", phone=" + phone +
                 ", status=" + status +
                 ", role=" + role +
+                ", company=" + company +
+                ", passport=" + passport +
                 '}';
-    }
-    public boolean isAdmin(){
-        return this.role == Role.ROLE_ADMIN;
     }
 }

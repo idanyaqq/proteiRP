@@ -21,8 +21,8 @@
                 <constraints nullable="false"/>
             </column>
             <column name="role" type="VARCHAR"/>
-            <column name="company_id" type="BIGINT">
-            </column>
+            <column name="company_id" type="BIGINT"/>
+            <column name="passport_number" type="BIGINT"/>
         </createTable>
         <addDefaultValue tableName="users_test" columnName="role" defaultValue="ROLE_USER"/>
         <addForeignKeyConstraint baseTableName="users_test"
@@ -30,6 +30,11 @@
         constraintName="users_company_id_fk"
         referencedTableName="company"
         referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="users_test"
+                                 baseColumnNames="passport_number"
+                                 constraintName="users_passport_number_fk"
+                                 referencedTableName="passports"
+                                 referencedColumnNames="number"/>
 
     </changeSet>
 

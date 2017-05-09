@@ -12,5 +12,6 @@ public interface UserService {
     User findById(Long id);
     User findByUsername(String username);
     void getStatus(Long id, boolean status);
-    List<User> finduserByCompany(String companyName);
+    List<User> findUserByCompany(String companyName);
+    User findByPassportNUmber(long passportNubmer);
 }

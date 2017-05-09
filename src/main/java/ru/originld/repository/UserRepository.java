@@ -27,4 +27,7 @@ public interface UserRepository extends JpaRepository<User,Long> {
 //    @Query(value = "SELECT u FROM User u LEFT JOIN Company c ON u.company.id =c.id WHERE c.name =: company_name")
     List<User> findUsersByCompany(@Param("company_name")String company_name);
 
+    @Query(value = "SELECT u FROM User u WHERE u.passport.number =:passport_number")
+    User findByPassportNumber(@Param("passport_number") Long passportNumber);
+
 }
