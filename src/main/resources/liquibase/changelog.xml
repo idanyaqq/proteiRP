@@ -6,5 +6,7 @@
     <include file="changelogs/db.12345.companies.xml" relativeToChangelogFile="true"/>
     <include file="changelogs/db.12345.passports.xml" relativeToChangelogFile="true"/>
     <include file="changelogs/db.12345.users.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/db.12345.users_groups.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/db.12345.users_to_usersgroup.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>

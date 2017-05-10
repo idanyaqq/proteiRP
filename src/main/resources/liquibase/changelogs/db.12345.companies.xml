@@ -4,7 +4,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-    <changeSet id="add companies table" author="ivanov_v" logicalFilePath="db.140929.companies">
+    <changeSet id="add companies table" author="redin_d" logicalFilePath="db.12345.companies">
         <createTable tableName="company">
             <column autoIncrement="true" name="id" type="BIGINT">
                 <constraints primaryKey="true" primaryKeyName="company_pkey"/>
@@ -17,6 +17,20 @@
             <column name="email" type="VARCHAR"/>
             <column name="phone" type="BIGINT"/>
         </createTable>
+    </changeSet>
+
+    <changeSet id="add companies" author="redin_d">
+        <insert tableName="company">
+            <column name="name" value="JobWork"/>
+            <column name="info" value="infoInfo"/>
+            <column name="phone" value="88005553535"/>
+        </insert>
+
+        <insert tableName="company">
+            <column name="name" value="Tryhard"/>
+            <column name="info" value="infoInfompreInfo"/>
+            <column name="phone" value="88005553535"/>
+        </insert>
     </changeSet>
 
 </databaseChangeLog>

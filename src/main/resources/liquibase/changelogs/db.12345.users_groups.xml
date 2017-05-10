@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="add users_group table" author="redin_d" logicalFilePath="db.12345.users_group">
+        <createTable tableName="users_group">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="users_group_pkey"/>
+            </column>
+            <column name="name" type="VARCHAR">
+                <constraints nullable="false"/>
+            </column>
+            <column name="info" type="VARCHAR"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="add groups" author="redin_d">
+        <insert tableName="users_group">
+            <column name="name" value="Pony"/>
+            <column name="info" value="We are ponies"/>
+        </insert>
+        <insert tableName="users_group">
+            <column name="name" value="Devils"/>
+            <column name="info" value="We are devils"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

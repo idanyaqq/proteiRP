@@ -3,31 +3,33 @@ package ru.originld.model;
 import javax.persistence.*;
 
 /**
- * Created by Danya on 09/05/2017.
+ * Created by redin on 5/10/17.
  */
 @Entity
 @Table(name = "passports")
 public class Passport {
-    @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
 
-    @Column(name = "nubmer")
+    @Id
+    @Column(name = "user_id",updatable = false,insertable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long userId;
+
+    @Column(name = "number")
     private long number;
 
-    @Column(name = "address")
-    private String address;
+    @Column(name = "info")
+    private String info;
 
-    @OneToOne(fetch = FetchType.EAGER)
+    @OneToOne
+    @JoinColumn(name = "user_id")
     private User user;
 
-    public long getId() {
-        return id;
+    public long getUserId() {
+        return userId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 
     public long getNumber() {
@@ -38,19 +40,11 @@ public class Passport {
         this.number = number;
     }
 
-    public String getAddress() {
-        return address;
+    public String getInfo() {
+        return info;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
+    public void setInfo(String info) {
+        this.info = info;
     }
 }

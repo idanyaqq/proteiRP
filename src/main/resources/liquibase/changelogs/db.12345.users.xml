@@ -17,33 +17,29 @@
             </column>
             <column name="email" type="VARCHAR"/>
             <column name="phone" type="BIGINT"/>
-            <column name="status" type="BOOLEAN" defaultValueBoolean="true">
-                <constraints nullable="false"/>
-            </column>
+            <column name="status" type="BOOLEAN" defaultValueBoolean="true"/>
+
             <column name="role" type="VARCHAR"/>
             <column name="company_id" type="BIGINT"/>
-            <column name="passport_number" type="BIGINT"/>
+            <column name="passport_id" type="BIGINT" autoIncrement="true"/>
         </createTable>
         <addDefaultValue tableName="users_test" columnName="role" defaultValue="ROLE_USER"/>
-        <addForeignKeyConstraint baseTableName="users_test"
-        baseColumnNames="company_id"
-        constraintName="users_company_id_fk"
-        referencedTableName="company"
-        referencedColumnNames="id"/>
-        <addForeignKeyConstraint baseTableName="users_test"
-                                 baseColumnNames="passport_number"
-                                 constraintName="users_passport_number_fk"
-                                 referencedTableName="passports"
-                                 referencedColumnNames="number"/>
 
+        <addForeignKeyConstraint baseTableName="users_test"
+                                 baseColumnNames="company_id"
+                                 constraintName="users_company_id_fk"
+                                 referencedTableName="company"
+                                 referencedColumnNames="id"/>
     </changeSet>
 
-    <changeSet id="add user" author="redin_d">
+    <changeSet id="add user_in_users_test" author="redin_d">
         <insert tableName="users_test">
             <column name="username" value="User"/>
             <column name="password" value="$2a$10$zS/BthxFtmuVJdbZ5Gi7D.3rKw2kXTkbO.hekVIPY2Dtu4S7Co8lW"/>
             <column name="email" value="User email"/>
             <column name="phone" value="8911252525"/>
+            <column name="company_id" value="1"/>
+            <column name="passport_id" value="1"/>
         </insert>
         <insert tableName="users_test">
             <column name="username" value="Admin"/>
@@ -51,7 +47,12 @@
             <column name="email" value="Admin email"/>
             <column name="phone" value="11111111"/>
             <column name="role" value="ROLE_ADMIN"/>
+            <column name="company_id" value="2"/>
+            <column name="passport_id" value="2"/>
+
         </insert>
     </changeSet>
+
+
 
 </databaseChangeLog>

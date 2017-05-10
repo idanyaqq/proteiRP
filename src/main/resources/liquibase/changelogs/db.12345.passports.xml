@@ -4,16 +4,28 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-    <changeSet id="add passport table" author="ivanov_v" logicalFilePath="db.140929.passport">
+    <changeSet id="add passport table" author="redin_d" logicalFilePath="db.12345.passports">
         <createTable tableName="passports">
-            <column autoIncrement="true" name="id" type="BIGINT">
-                <constraints primaryKey="true" primaryKeyName="psaaport_pkey"/>
+            <column name="user_id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true"/>
             </column>
+            <column name="info" type="VARCHAR"/>
             <column name="number" type="BIGINT">
                 <constraints unique="true"/>
             </column>
-            <column name="address" type="VARCHAR"/>
         </createTable>
+    </changeSet>
+
+
+    <changeSet id="add_passport" author="redin_d">
+        <insert tableName="passports">
+            <column name="info" value="Pushkin str., 13, 12."/>
+            <column name="number" value="1234567"/>
+        </insert>
+        <insert tableName="passports">
+            <column name="info" value="Derevnya zagrobnoe"/>
+            <column name="number" value="123456"/>
+        </insert>
     </changeSet>
 
 </databaseChangeLog>

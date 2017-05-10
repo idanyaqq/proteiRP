@@ -1,5 +1,8 @@
 package ru.originld.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -28,75 +31,8 @@ public class Company {
     private long phone;
 
     @OneToMany(mappedBy = "company",fetch = FetchType.EAGER)
+    @JsonBackReference(value = "company")
     private List<User> users;
-
-//    private Company(Builder builder) {
-//        id = builder.id;
-//        name = builder.name;
-//        info = builder.info;
-//        email = builder.email;
-//        phone = builder.phone;
-//        address = builder.address;
-//
-//    }
-//
-//
-//
-//    public static class Builder{
-//        private long id;
-//        private String name;
-//        private String info;
-//        private String address;
-//        private String email;
-//        private long phone;
-//
-//        public Builder() {
-//        }
-//
-//        public Builder id(int val){
-//            id = val;
-//            return this;
-//        }
-//
-//        public Builder name(String val){
-//            name = val;
-//            return this;
-//        }
-//
-//        public Builder info(String val){
-//            info = val;
-//            return this;
-//        }
-//
-//        public Builder address(String val){
-//            address = val;
-//            return this;
-//        }
-//
-//        public Builder email(String val){
-//            email = val;
-//            return this;
-//        }
-//
-//        public Builder phone(long val){
-//            phone = val;
-//            return this;
-//        }
-//
-//        public Company build(){
-//            Company company = new Company(this);
-//            clean();
-//            return company;
-//        }
-//        public void clean() {
-//            id = 0;
-//            name = null;
-//            info = null;
-//            address = null;
-//            email = null;
-//            phone = 0;
-//        }
-//    }
 
     public long getId() {
         return id;

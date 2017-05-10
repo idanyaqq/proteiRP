@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="add users_to_users_group table" author="redin_d" logicalFilePath="db.12345.users_to_users_group">
+        <createTable tableName="users_to_users_group">
+            <column name="user_id" type="BIGINT"/>
+            <column name="group_id" type="BIGINT"/>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="users_to_users_group"
+                                 baseColumnNames="user_id"
+                                 constraintName="users_id_fkey"
+                                 referencedTableName="users_test"
+                                 referencedColumnNames="id"/>
+
+        <addForeignKeyConstraint baseTableName="users_to_users_group"
+                                 baseColumnNames="group_id"
+                                 constraintName="users_group_id_fkey"
+                                 referencedTableName="users_group"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+    <changeSet id="add users and groups" author="redin_d">
+        <insert tableName="users_to_users_group">
+            <column name="user_id" value="1"/>
+            <column name="group_id" value="1"/>
+        </insert>
+        <insert tableName="users_to_users_group">
+            <column name="user_id" value="2"/>
+            <column name="group_id" value="2"/>
+        </insert>
+    </changeSet>
+
+
+</databaseChangeLog>
