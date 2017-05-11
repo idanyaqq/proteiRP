@@ -1,5 +1,6 @@
 package ru.originld.service;
 
+import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import ru.originld.model.Enums.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -22,6 +23,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private JdbcUserDetailsManager jdbcUserDetailsManager;
 
 
     @Transactional
@@ -60,5 +64,24 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findByPassportNUmber(long passportNubmer) {
         return userRepository.findByPassportNumber(passportNubmer);
+    }
+
+    @Override
+    public void changeOwnPassword(String currentPassword, String newPassword) {
+        try {
+            String encodedPass = preparePassword(newPassword);
+            jdbcUserDetailsManager.changePassword(currentPassword,encodedPass);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private String preparePassword(String newPassword) throws Exception{
+        if(newPassword!=null && newPassword.length()>= User.MIN_PASS_LENGTH){
+            return bCrypt.encode(newPassword);
+        }
+        else{
+           throw new Exception("Password is empty or length less then 6.");
+        }
     }
 }

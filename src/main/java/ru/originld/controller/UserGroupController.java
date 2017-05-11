@@ -2,7 +2,6 @@ package ru.originld.controller;
 
 import org.hibernate.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -55,6 +54,18 @@ public class UserGroupController {
             List<UserGroup> userGroupsList = userGroupService.findByUserId(userId);
             return new ResponseEntity<>(userGroupsList, HttpStatus.OK);
         } catch (ObjectNotFoundException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @RequestMapping(value = "users/group/getAll",method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity<List<UserGroup>> getAllUsersGroupAndUsers(){
+        List<UserGroup> listOfAll = userGroupService.getAllUsersGroupAndUsers();
+        if(listOfAll!=null){
+            return new ResponseEntity<>(listOfAll,HttpStatus.OK);
+        }
+        else{
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }

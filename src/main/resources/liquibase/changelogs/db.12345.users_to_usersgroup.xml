@@ -12,7 +12,7 @@
         <addForeignKeyConstraint baseTableName="users_to_users_group"
                                  baseColumnNames="user_id"
                                  constraintName="users_id_fkey"
-                                 referencedTableName="users_test"
+                                 referencedTableName="users"
                                  referencedColumnNames="id"/>
 
         <addForeignKeyConstraint baseTableName="users_to_users_group"

@@ -1,7 +1,6 @@
 package ru.originld.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.List;
@@ -31,7 +30,7 @@ public class Company {
     private long phone;
 
     @OneToMany(mappedBy = "company",fetch = FetchType.EAGER)
-    @JsonBackReference(value = "company")
+    @JsonIgnore
     private List<User> users;
 
     public long getId() {

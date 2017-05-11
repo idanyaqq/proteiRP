@@ -29,4 +29,9 @@ public class UserGroupServiceImpl implements UserGroupService {
     public List<UserGroup> findByUserId(long userId) {
         return userGroupRepository.findByUserId(userId);
     }
+
+    @Override
+    public List<UserGroup> getAllUsersGroupAndUsers() {
+        return userGroupRepository.getAllGroupsAndUsers();
+    }
 }

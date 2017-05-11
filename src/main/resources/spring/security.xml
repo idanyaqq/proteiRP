@@ -39,11 +39,11 @@
                 class="org.springframework.security.provisioning.JdbcUserDetailsManager"
                 p:usersByUsernameQuery="
                     SELECT username, password, 'true'
-                    FROM users_test
+                    FROM users
                     WHERE username=?;"
                 p:authoritiesByUsernameQuery="
                     SELECT username, password
-                    FROM users_test
+                    FROM users
                     WHERE username=?;">
         <beans:property name="dataSource" ref="dataSource"/>
         <!--<beans:property name="authenticationManager" ref="authenticationManager"/>-->

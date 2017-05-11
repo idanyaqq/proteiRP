@@ -19,27 +19,25 @@ import java.util.List;
 
 @RestController
 @EnableWebMvc
-//@RequestMapping("/user")
 public class UserController {
 
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "users/passport/{passportNumber}",method = RequestMethod.GET)
-    public ResponseEntity<User> findUserByPassportNumber(@PathVariable("passportNumber") Long passportNumber){
+    @RequestMapping(value = "users/passport/{passportNumber}", method = RequestMethod.GET)
+    public ResponseEntity<User> findUserByPassportNumber(@PathVariable("passportNumber") Long passportNumber) {
         User user = userService.findByPassportNUmber(passportNumber);
-        return (user!=null?new ResponseEntity<User>(user,HttpStatus.OK):new ResponseEntity<User>(HttpStatus.NOT_FOUND));
+        return (user != null ? new ResponseEntity<User>(user, HttpStatus.OK) : new ResponseEntity<User>(HttpStatus.NOT_FOUND));
     }
 
     @RequestMapping(value = "/users/companies/{companyName}", method = RequestMethod.GET)
-    public ResponseEntity<List<User>> getUsersByCompany(@PathVariable("companyName") String companyName){
+    public ResponseEntity<List<User>> getUsersByCompany(@PathVariable("companyName") String companyName) {
         List<User> userList = userService.findUserByCompany(companyName);
-        return new ResponseEntity<>(userList,HttpStatus.OK);
+        return new ResponseEntity<>(userList, HttpStatus.OK);
     }
 
 
-
-    @RequestMapping(value = "/users",method = RequestMethod.POST)
+    @RequestMapping(value = "/users", method = RequestMethod.POST)
     public ResponseEntity<Void> saveUser(@RequestBody User user, UriComponentsBuilder uriComponentsBuilder) {
         userService.saveUser(user);
         HttpHeaders httpHeaders = new HttpHeaders();
@@ -66,7 +64,7 @@ public class UserController {
             boolean currentStatus = currentUser.getStatus();
             userService.getStatus(id, status);
             boolean updatedStatus = userService.findById(id).getStatus();
-                    HttpHeaders httpHeaders = new HttpHeaders();
+            HttpHeaders httpHeaders = new HttpHeaders();
             httpHeaders.setLocation(ucBuilder.path("/users/{id}?previousStatus=" + (currentStatus ? "online" : "offline") + "&CurrentStatus=" + (updatedStatus ? "online" : "offline"))
                     .buildAndExpand(currentUser.getId())
                     .toUri());
@@ -77,4 +75,14 @@ public class UserController {
         }
     }
 
+    @RequestMapping(value = "/users/changePassword", method = RequestMethod.POST)
+    public ResponseEntity<Void> changePassword(@RequestParam("currentPassword") String currentPassword,
+                                               @RequestParam("newPassword") String newPassword) {
+        try {
+            userService.changeOwnPassword(currentPassword, newPassword);
+            return new ResponseEntity<Void>(HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<Void>(HttpStatus.BAD_REQUEST);
+        }
+    }
 }

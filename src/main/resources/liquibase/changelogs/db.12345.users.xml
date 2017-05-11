@@ -5,7 +5,7 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
     <changeSet id="authorities tables" author="redin_d" logicalFilePath="db.12345.users">
-        <createTable tableName="users_test">
+        <createTable tableName="users">
             <column name="id" autoIncrement="true" type="BIGINT">
                 <constraints primaryKey="true"/>
             </column>
@@ -23,17 +23,17 @@
             <column name="company_id" type="BIGINT"/>
             <column name="passport_id" type="BIGINT" autoIncrement="true"/>
         </createTable>
-        <addDefaultValue tableName="users_test" columnName="role" defaultValue="ROLE_USER"/>
+        <addDefaultValue tableName="users" columnName="role" defaultValue="ROLE_USER"/>
 
-        <addForeignKeyConstraint baseTableName="users_test"
+        <addForeignKeyConstraint baseTableName="users"
                                  baseColumnNames="company_id"
                                  constraintName="users_company_id_fk"
                                  referencedTableName="company"
                                  referencedColumnNames="id"/>
     </changeSet>
 
-    <changeSet id="add user_in_users_test" author="redin_d">
-        <insert tableName="users_test">
+    <changeSet id="add user_in_users" author="redin_d">
+        <insert tableName="users">
             <column name="username" value="User"/>
             <column name="password" value="$2a$10$zS/BthxFtmuVJdbZ5Gi7D.3rKw2kXTkbO.hekVIPY2Dtu4S7Co8lW"/>
             <column name="email" value="User email"/>
@@ -41,7 +41,7 @@
             <column name="company_id" value="1"/>
             <column name="passport_id" value="1"/>
         </insert>
-        <insert tableName="users_test">
+        <insert tableName="users">
             <column name="username" value="Admin"/>
             <column name="password" value="$2a$10$TXuQesdGBTgX4UXqkoHZ1OZlHsU.oAJVa2vhtpq/6uaLYKJZH6Ibq"/>
             <column name="email" value="Admin email"/>

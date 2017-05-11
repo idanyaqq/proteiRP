@@ -12,4 +12,5 @@ public interface UserGroupService {
     List<UserGroup> findByUserGroupId(long id);
     List<UserGroup> findByName(String name);
     List<UserGroup> findByUserId(long userId);
+    List<UserGroup> getAllUsersGroupAndUsers();
 }

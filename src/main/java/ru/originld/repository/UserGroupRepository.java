@@ -18,5 +18,8 @@ public interface UserGroupRepository extends JpaRepository<UserGroup,Long> {
     @Query(value = "SELECT * FROM users_to_users_group inner join users_group on group_id = id where user_id =?1", nativeQuery = true)
     List<UserGroup> findByUserId( long userId);
 
+    @Query(value = "SELECT * FROM users_to_users_group LEFT join users_group on group_id=id",nativeQuery = true)
+    List<UserGroup> getAllGroupsAndUsers();
+
 
 }

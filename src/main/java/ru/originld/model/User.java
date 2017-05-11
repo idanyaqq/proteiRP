@@ -12,9 +12,11 @@ import java.util.List;
  */
 
 @Entity
-@Table(name = "users_test")
+@Table(name = "users")
 @Proxy(lazy = false)
 public class User {
+
+    public static final int MIN_PASS_LENGTH = 6;
 
     @Id
     @Column(name = "id")
@@ -24,7 +26,7 @@ public class User {
     @Column(name = "username")
     private String username;
 
-    @JsonIgnore
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @Column(name = "password")
     private String password;
 
@@ -43,14 +45,13 @@ public class User {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "company_id")
-    @JsonManagedReference(value = "company")
     private Company company;
 
     @OneToOne(targetEntity = Passport.class,cascade = CascadeType.PERSIST,mappedBy = "user",fetch = FetchType.EAGER)
     private Passport passport;
 
     @ManyToMany(fetch = FetchType.EAGER)
-//    @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class , property = "@id")
+    @JsonIgnore
     @JoinTable(name = "users_to_users_group",joinColumns = {
             @JoinColumn(name = "user_id",nullable = false)},
             inverseJoinColumns = {

@@ -14,4 +14,5 @@ public interface UserService {
     void getStatus(Long id, boolean status);
     List<User> findUserByCompany(String companyName);
     User findByPassportNUmber(long passportNubmer);
+    void changeOwnPassword(String currentPassword,String newPassword);
 }

@@ -20,7 +20,7 @@ public interface UserRepository extends JpaRepository<User,Long> {
 
     @Modifying
     @Transactional
-    @Query(value = "UPDATE users_test SET status=:status WHERE id=:id",nativeQuery = true)
+    @Query(value = "UPDATE users SET status=:status WHERE id=:id",nativeQuery = true)
     void updateStatus(@Param("id") Long id, @Param("status") boolean status);
 
     @Query(value = "SELECT u FROM User u WHERE u.company.name =:company_name")
@@ -29,5 +29,7 @@ public interface UserRepository extends JpaRepository<User,Long> {
 
     @Query(value = "SELECT u FROM User u WHERE u.passport.number =:passport_number")
     User findByPassportNumber(@Param("passport_number") Long passportNumber);
+
+
 
 }

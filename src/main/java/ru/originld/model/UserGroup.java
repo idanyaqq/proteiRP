@@ -1,9 +1,5 @@
 package ru.originld.model;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -26,7 +22,6 @@ public class UserGroup {
     private String info;
 
     @ManyToMany(fetch =FetchType.EAGER)
-    @JsonIgnore
     @JoinTable(name = "users_to_users_group",joinColumns = {
             @JoinColumn(name = "group_id",nullable = false)},
             inverseJoinColumns = {
