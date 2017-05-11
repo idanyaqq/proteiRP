@@ -57,7 +57,4 @@
     <tx:annotation-driven/>
     <jpa:repositories base-package="ru.originld.repository"/>
 
-
-
-
 </beans>

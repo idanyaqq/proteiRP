@@ -17,20 +17,24 @@
         <access-denied-handler ref="accessDeniedHandler"/>
 
         <intercept-url pattern="/api/users/**" access="isAuthenticated()"/>
-
+        <intercept-url pattern="/api/admin/**" access="hasRole('ROLE_ADMIN')"/>
 
         <form-login login-processing-url="/api/login"
                     username-parameter="username"
                     password-parameter="password"
                     authentication-success-handler-ref="SuccesHandler"
                     authentication-failure-handler-ref="FailureHandler"/>
-        <logout logout-url="/api/logout"/>
+        <logout logout-url="/api/logout"
+        success-handler-ref="logoutSuccessHandler"/>
     </http>
     <beans:bean id="restAuthenticationEntryPoint" class="ru.originld.security.RestAuthenticationEntryPoint"/>
 
     <beans:bean id="SuccesHandler" class="ru.originld.security.RestAuthenticationSuccessHandler"/>
     <beans:bean id="FailureHandler" class="ru.originld.security.RestAuthenticationFailureHandler"/>
 
+
+    <beans:bean id="logoutSuccessHandler"
+                class="ru.originld.security.RestLogoutSuccessHandler"/>
 
     <beans:bean id="accessDeniedHandler"
                 class="ru.originld.security.RestAuthenticationAccessDeniedHandler"/>
@@ -42,7 +46,7 @@
                     FROM users
                     WHERE username=?;"
                 p:authoritiesByUsernameQuery="
-                    SELECT username, password
+                    SELECT username, role
                     FROM users
                     WHERE username=?;">
         <beans:property name="dataSource" ref="dataSource"/>

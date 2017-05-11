@@ -36,7 +36,6 @@ public class UserController {
         return new ResponseEntity<>(userList, HttpStatus.OK);
     }
 
-
     @RequestMapping(value = "/users", method = RequestMethod.POST)
     public ResponseEntity<Void> saveUser(@RequestBody User user, UriComponentsBuilder uriComponentsBuilder) {
         userService.saveUser(user);
@@ -54,7 +53,6 @@ public class UserController {
         } catch (ObjectNotFoundException e) {
             return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
         }
-
     }
 
     @RequestMapping(value = "/users/{id}", method = RequestMethod.POST)
@@ -84,5 +82,23 @@ public class UserController {
         } catch (Exception e) {
             return new ResponseEntity<Void>(HttpStatus.BAD_REQUEST);
         }
+    }
+
+    @RequestMapping(value = "/admin/findAll",method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity<List<User>> findAll(){
+        List<User> userList = userService.findAll();
+        if(userList!=null && !userList.isEmpty()){
+            return new ResponseEntity<List<User>>(userList,HttpStatus.OK);
+        } else {
+            return new ResponseEntity<List<User>>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @RequestMapping(value = "/users/edit/{id}",method = RequestMethod.POST)
+
+    public ResponseEntity<Void> editUser(@ModelAttribute("user") User user,@PathVariable("id")long id){
+        userService.editUserById(user,id);
+        return new ResponseEntity<Void>(HttpStatus.OK);
     }
 }

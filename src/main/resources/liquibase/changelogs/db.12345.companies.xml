@@ -24,12 +24,16 @@
             <column name="name" value="JobWork"/>
             <column name="info" value="infoInfo"/>
             <column name="phone" value="88005553535"/>
+            <column name="address" value="Grow St."/>
+            <column name="email" value="cj@bigsmoke.la"/>
         </insert>
 
         <insert tableName="company">
             <column name="name" value="Tryhard"/>
             <column name="info" value="infoInfompreInfo"/>
-            <column name="phone" value="88005553535"/>
+            <column name="phone" value="88002000600"/>
+            <column name="address" value="Amazonka"/>
+            <column name="email" value="akamanahi@soulshots.l2"/>
         </insert>
     </changeSet>
 

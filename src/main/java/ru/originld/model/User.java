@@ -23,7 +23,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "username")
+    @Column(name = "username",unique = true)
     private String username;
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
@@ -47,10 +47,10 @@ public class User {
     @JoinColumn(name = "company_id")
     private Company company;
 
-    @OneToOne(targetEntity = Passport.class,cascade = CascadeType.PERSIST,mappedBy = "user",fetch = FetchType.EAGER)
+    @OneToOne(targetEntity = Passport.class,cascade = {CascadeType.ALL},mappedBy = "user",fetch = FetchType.EAGER)
     private Passport passport;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER,cascade = {CascadeType.ALL})
     @JsonIgnore
     @JoinTable(name = "users_to_users_group",joinColumns = {
             @JoinColumn(name = "user_id",nullable = false)},

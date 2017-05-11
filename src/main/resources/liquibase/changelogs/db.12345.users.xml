@@ -12,16 +12,13 @@
             <column name="username" type="VARCHAR">
                 <constraints nullable="false"/>
             </column>
-            <column name="password" type="VARCHAR">
-                <constraints nullable="false"/>
-            </column>
+            <column name="password" type="VARCHAR"/>
             <column name="email" type="VARCHAR"/>
             <column name="phone" type="BIGINT"/>
             <column name="status" type="BOOLEAN" defaultValueBoolean="true"/>
 
             <column name="role" type="VARCHAR"/>
             <column name="company_id" type="BIGINT"/>
-            <column name="passport_id" type="BIGINT" autoIncrement="true"/>
         </createTable>
         <addDefaultValue tableName="users" columnName="role" defaultValue="ROLE_USER"/>
 
@@ -39,7 +36,6 @@
             <column name="email" value="User email"/>
             <column name="phone" value="8911252525"/>
             <column name="company_id" value="1"/>
-            <column name="passport_id" value="1"/>
         </insert>
         <insert tableName="users">
             <column name="username" value="Admin"/>
@@ -48,10 +44,10 @@
             <column name="phone" value="11111111"/>
             <column name="role" value="ROLE_ADMIN"/>
             <column name="company_id" value="2"/>
-            <column name="passport_id" value="2"/>
-
         </insert>
+        <sqlFile path="liquibase/users_insert.sql" />
     </changeSet>
+
 
 
 

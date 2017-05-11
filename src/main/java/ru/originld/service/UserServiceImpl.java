@@ -10,6 +10,7 @@ import ru.originld.model.User;
 import ru.originld.repository.UserRepository;
 
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Created by Danya on 15/04/2017.
@@ -28,16 +29,38 @@ public class UserServiceImpl implements UserService {
     private JdbcUserDetailsManager jdbcUserDetailsManager;
 
 
+    @Override
+    public List<User> findAll() {
+        return userRepository.findAll();
+    }
+
     @Transactional
     public User saveUser(User user) {
         String userPassword = user.getPassword();
-        user.setPassword(bCrypt.encode(userPassword));
-        if(user.getRole() == null){
-            user.setRole(Role.ROLE_USER);
-        }
-        if(!user.getStatus()){
-            user.setStatus(true);
-        }
+        Role userRole = user.getRole();
+        boolean status = user.getStatus();
+
+        user.setPassword((userPassword==null||userPassword.isEmpty()
+                        ?bCrypt.encode("user")                //UUID.randomUUID().toString()
+                        :bCrypt.encode(userPassword)));
+
+        user.setRole(userRole==null?Role.ROLE_USER:userRole);
+
+        user.setStatus(status? true :true);
+
+//        if(userPassword == null || userPassword.isEmpty()){
+//            String generatedPassword = UUID.randomUUID().toString();
+//            user.setPassword(bCrypt.encode(generatedPassword));
+//        } else {
+//            user.setPassword(bCrypt.encode(userPassword));
+//        }
+
+//        if(user.getRole() == null){
+//            user.setRole(Role.ROLE_USER);
+//        }
+//        if(!user.getStatus()){
+//            user.setStatus(true);
+//        }
         return userRepository.saveAndFlush(user);
     }
 
@@ -74,6 +97,11 @@ public class UserServiceImpl implements UserService {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void editUserById(User user,long id) {
+        userRepository.editUserById(user.getUsername(),user.getEmail(),user.getPhone(),user.getStatus(),id);
     }
 
     private String preparePassword(String newPassword) throws Exception{

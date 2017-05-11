@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class Passport {
 
     @Id
-    @Column(name = "user_id",updatable = false,insertable = false)
+    @Column(name = "user_id",updatable = false,insertable = false,unique = true)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long userId;
 

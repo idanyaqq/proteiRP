@@ -58,7 +58,7 @@ public class UserGroupController {
         }
     }
 
-    @RequestMapping(value = "users/group/getAll",method = RequestMethod.GET)
+    @RequestMapping(value = "/admin/group/getAll",method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<List<UserGroup>> getAllUsersGroupAndUsers(){
         List<UserGroup> listOfAll = userGroupService.getAllUsersGroupAndUsers();
