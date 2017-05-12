@@ -1,8 +1,10 @@
 package ru.originld.model;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import ru.originld.model.Enums.Role;
-import org.hibernate.annotations.Proxy;
+import ru.originld.model.to.UserGroupForUserUsing;
 
 import javax.persistence.*;
 import java.util.List;
@@ -12,8 +14,8 @@ import java.util.List;
  */
 
 @Entity
+//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Table(name = "users")
-@Proxy(lazy = false)
 public class User {
 
     public static final int MIN_PASS_LENGTH = 6;
@@ -23,7 +25,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "username",unique = true)
+    @Column(name = "username", unique = true)
     private String username;
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
@@ -43,22 +45,38 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "company_id")
     private Company company;
 
-    @OneToOne(targetEntity = Passport.class,cascade = {CascadeType.ALL},mappedBy = "user",fetch = FetchType.EAGER)
+    @OneToOne(targetEntity = Passport.class, cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.LAZY)
     private Passport passport;
 
-    @ManyToMany(fetch = FetchType.EAGER,cascade = {CascadeType.ALL})
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JsonIgnore
-    @JoinTable(name = "users_to_users_group",joinColumns = {
-            @JoinColumn(name = "user_id",nullable = false)},
+    @JoinTable(name = "users_to_users_group", joinColumns = {
+            @JoinColumn(name = "user_id", nullable = false)},
             inverseJoinColumns = {
-                    @JoinColumn(name = "group_id",nullable = false)
+                    @JoinColumn(name = "group_id", nullable = false)
             })
     private List<UserGroup> userGroupList;
 
+
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinTable(name = "users_to_users_group", joinColumns = {
+            @JoinColumn(name = "user_id", nullable = false)},
+            inverseJoinColumns = {
+                    @JoinColumn(name = "group_id", nullable = false)
+            })
+    private List<UserGroupForUserUsing> userGroupForUserUsings;
+
+    public List<UserGroupForUserUsing> getUserGroupForUserUsings() {
+        return userGroupForUserUsings;
+    }
+
+    public void setUserGroupForUserUsings(List<UserGroupForUserUsing> userGroupForUserUsings) {
+        this.userGroupForUserUsings = userGroupForUserUsings;
+    }
 
     public Passport getPassport() {
         return passport;
@@ -68,13 +86,6 @@ public class User {
         this.passport = passport;
     }
 
-    public List<UserGroup> getUserGroupList() {
-        return userGroupList;
-    }
-
-    public void setUserGroupList(List<UserGroup> userGroupList) {
-        this.userGroupList = userGroupList;
-    }
 
     public Company getCompany() {
         return company;
@@ -136,19 +147,20 @@ public class User {
         this.phone = phone;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
-                ", phone=" + phone +
-                ", status=" + status +
-                ", role=" + role +
-                ", company=" + company +
-                ", passport=" + passport +
-                ", userGroupList=" + userGroupList +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "User{" +
+//                "id=" + id +
+//                ", username='" + username + '\'' +
+//                ", password='" + password + '\'' +
+//                ", email='" + email + '\'' +
+//                ", phone=" + phone +
+//                ", status=" + status +
+//                ", role=" + role +
+//                ", company=" + company +
+//                ", passport=" + passport +
+//                ", userGroupList=" + userGroupForUserUsings +
+//                '}';
+//    }
+//}
 }

@@ -10,7 +10,8 @@ import java.util.List;
 public interface UserService {
     List<User> findAll();
     User saveUser(User user);
-    User findById(Long id);
+    User findByIdWA(Long id);
+    User findByIdAA2(Long id);
     User findByUsername(String username);
     void getStatus(Long id, boolean status);
     List<User> findUserByCompany(String companyName);

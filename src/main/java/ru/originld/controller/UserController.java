@@ -48,7 +48,17 @@ public class UserController {
     @ResponseBody
     public ResponseEntity<User> getUserInfo(@PathVariable("id") Long id) throws Exception {
         try {
-            User user = userService.findById(id);
+            User user = userService.findByIdWA(id);
+            return new ResponseEntity<User>(user, HttpStatus.OK);
+        } catch (ObjectNotFoundException e) {
+            return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
+        }
+    }
+    @RequestMapping(value = "/users/AW/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity<User> getUserInfo2(@PathVariable("id") Long id) throws Exception {
+        try {
+            User user = userService.findByIdAA2(id);
             return new ResponseEntity<User>(user, HttpStatus.OK);
         } catch (ObjectNotFoundException e) {
             return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
@@ -58,14 +68,13 @@ public class UserController {
     @RequestMapping(value = "/users/{id}", method = RequestMethod.POST)
     public ResponseEntity<Void> getStatus(@PathVariable("id") Long id, @RequestParam("status") boolean status, UriComponentsBuilder ucBuilder) {
         try {
-            User currentUser = userService.findById(id);
+            User currentUser = userService.findByIdWA(id);
             boolean currentStatus = currentUser.getStatus();
             userService.getStatus(id, status);
-            boolean updatedStatus = userService.findById(id).getStatus();
+            boolean updatedStatus = userService.findByIdWA(id).getStatus();
             HttpHeaders httpHeaders = new HttpHeaders();
-            httpHeaders.setLocation(ucBuilder.path("/users/{id}?previousStatus=" + (currentStatus ? "online" : "offline") + "&CurrentStatus=" + (updatedStatus ? "online" : "offline"))
-                    .buildAndExpand(currentUser.getId())
-                    .toUri());
+            httpHeaders.setUpgrade("previousStatus=" + (currentStatus ? "online" : "offline")
+                    + ",CurrentStatus=" + (updatedStatus ? "online" : "offline"));
 
             return new ResponseEntity<Void>(httpHeaders, HttpStatus.OK);
         } catch (ObjectNotFoundException e) {
@@ -84,21 +93,21 @@ public class UserController {
         }
     }
 
-    @RequestMapping(value = "/admin/findAll",method = RequestMethod.GET)
+    @RequestMapping(value = "/admin/findAll", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<List<User>> findAll(){
+    public ResponseEntity<List<User>> findAll() {
         List<User> userList = userService.findAll();
-        if(userList!=null && !userList.isEmpty()){
-            return new ResponseEntity<List<User>>(userList,HttpStatus.OK);
+        if (userList != null && !userList.isEmpty()) {
+            return new ResponseEntity<List<User>>(userList, HttpStatus.OK);
         } else {
             return new ResponseEntity<List<User>>(HttpStatus.NOT_FOUND);
         }
     }
 
-    @RequestMapping(value = "/users/edit/{id}",method = RequestMethod.POST)
+    @RequestMapping(value = "/users/edit/{id}", method = RequestMethod.POST)
 
-    public ResponseEntity<Void> editUser(@ModelAttribute("user") User user,@PathVariable("id")long id){
-        userService.editUserById(user,id);
+    public ResponseEntity<Void> editUser(@ModelAttribute("user") User user, @PathVariable("id") long id) {
+        userService.editUserById(user, id);
         return new ResponseEntity<Void>(HttpStatus.OK);
     }
 }

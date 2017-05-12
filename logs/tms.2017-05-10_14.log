@@ -1,5 +1,0 @@
-14:02:22.138 [Thread-1]                  INFO  o.e.j.s.ServerConnector - doStop - Stopped ServerConnector@191ec193{HTTP/1.1,[http/1.1]}{0.0.0.0:8082} 
-14:02:22.141 [Thread-1]                  INFO  / - log - Destroying Spring FrameworkServlet 'dispatcher-config' 
-14:02:22.141 [Thread-1]                  INFO  o.s.w.c.s.XmlWebApplicationContext - doClose - Closing WebApplicationContext for namespace 'dispatcher-config-servlet': startup date [Wed May 10 13:47:58 MSK 2017]; root of context hierarchy 
-14:02:22.146 [Thread-1]                  INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - destroy - Closing JPA EntityManagerFactory for persistence unit 'default' 
-14:02:22.150 [Thread-1]                  INFO  o.e.j.s.h.ContextHandler - doStop - Stopped o.e.j.w.WebAppContext@72c4a3aa{/,[file:///home/redin/myProjects/proteiPRver2/proteiRP/src/main/webapp/, file:///home/redin/myProjects/proteiPRver2/proteiRP/target/classes/],UNAVAILABLE}{file:/home/redin/myProjects/proteiPRver2/proteiRP/target/classes/} 

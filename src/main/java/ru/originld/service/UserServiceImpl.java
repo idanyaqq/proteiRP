@@ -1,16 +1,16 @@
 package ru.originld.service;
 
-import org.springframework.security.provisioning.JdbcUserDetailsManager;
-import ru.originld.model.Enums.Role;
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import ru.originld.model.Enums.Role;
 import ru.originld.model.User;
 import ru.originld.repository.UserRepository;
 
 import java.util.List;
-import java.util.UUID;
 
 /**
  * Created by Danya on 15/04/2017.
@@ -63,10 +63,16 @@ public class UserServiceImpl implements UserService {
 //        }
         return userRepository.saveAndFlush(user);
     }
+    @Transactional
+    public User findByIdWA(Long id) {
+        User user = userRepository.findByIdAW(id);
+//        Hibernate.initialize(user.getCompany());
+        return user;
+    }
 
-
-    public User findById(Long id) {
-        return userRepository.findById(id);
+    @Override
+    public User findByIdAA2(Long id) {
+        return userRepository.findByIdAW(id);
     }
 
     @Override

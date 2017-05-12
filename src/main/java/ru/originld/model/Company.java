@@ -1,6 +1,10 @@
 package ru.originld.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import org.hibernate.annotations.Proxy;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 import java.util.List;
@@ -10,6 +14,7 @@ import java.util.List;
  */
 @Entity
 @Table(name = "company")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Company {
 
     @Id
@@ -29,7 +34,7 @@ public class Company {
 
     private long phone;
 
-    @OneToMany(mappedBy = "company",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "company",fetch = FetchType.LAZY)
     @JsonIgnore
     private List<User> users;
 
@@ -88,4 +93,17 @@ public class Company {
     public void setUsers(List<User> users) {
         this.users = users;
     }
+
+//    @Override
+//    public String toString() {
+//        return "Company{" +
+//                "id=" + id +
+//                ", name='" + name + '\'' +
+//                ", info='" + info + '\'' +
+//                ", address='" + address + '\'' +
+//                ", email='" + email + '\'' +
+//                ", phone=" + phone +
+//                ", users=" + users +
+//                '}';
+//    }
 }

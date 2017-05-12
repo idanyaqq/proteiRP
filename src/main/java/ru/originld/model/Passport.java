@@ -1,5 +1,7 @@
 package ru.originld.model;
 
+import org.hibernate.annotations.Proxy;
+
 import javax.persistence.*;
 
 /**
@@ -47,4 +49,14 @@ public class Passport {
     public void setInfo(String info) {
         this.info = info;
     }
+
+//    @Override
+//    public String toString() {
+//        return "Passport{" +
+//                "userId=" + userId +
+//                ", number=" + number +
+//                ", info='" + info + '\'' +
+//                ", user=" + user +
+//                '}';
+//    }
 }

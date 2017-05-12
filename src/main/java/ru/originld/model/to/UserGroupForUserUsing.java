@@ -1,17 +1,13 @@
-package ru.originld.model;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
+package ru.originld.model.to;
 
 import javax.persistence.*;
-import java.util.List;
 
 /**
- * Created by redin on 5/10/17.
+ * Created by redin on 5/12/17.
  */
 @Entity
 @Table(name = "users_group")
-public class UserGroup {
-
+public class UserGroupForUserUsing {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -23,13 +19,14 @@ public class UserGroup {
     @Column(name = "info")
     private String info;
 
-    @ManyToMany(fetch =FetchType.LAZY)
-    @JoinTable(name = "users_to_users_group",joinColumns = {
-            @JoinColumn(name = "group_id",nullable = false)},
-            inverseJoinColumns = {
-            @JoinColumn(name = "user_id",nullable = false)
-    })
-    private List<User> userList;
+//    @ManyToMany(fetch =FetchType.LAZY)
+//    @JsonIgnore
+//    @JoinTable(name = "users_to_users_group",joinColumns = {
+//            @JoinColumn(name = "group_id",nullable = false)},
+//            inverseJoinColumns = {
+//                    @JoinColumn(name = "user_id",nullable = false)
+//            })
+//    private List<User> userList;
 
 
     public long getId() {
@@ -56,13 +53,13 @@ public class UserGroup {
         this.info = info;
     }
 
-    public List<User> getUserList() {
-        return userList;
-    }
-
-    public void setUserList(List<User> userList) {
-        this.userList = userList;
-    }
+//    public List<User> getUserList() {
+//        return userList;
+//    }
+//
+//    public void setUserList(List<User> userList) {
+//        this.userList = userList;
+//    }
 
 //    @Override
 //    public String toString() {
@@ -70,7 +67,7 @@ public class UserGroup {
 //                "id=" + id +
 //                ", name='" + name + '\'' +
 //                ", info='" + info + '\'' +
-//                ", userList=" + userList +
+////                ", userList=" + userList +
 //                '}';
 //    }
 }
