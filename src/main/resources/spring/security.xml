@@ -9,7 +9,7 @@
 	http://www.springframework.org/schema/security
 	http://www.springframework.org/schema/security/spring-security.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package="ru.originld.security"/>
+    <context:component-scan base-package="ru.originald.security"/>
 
 
     <http auto-config="true" entry-point-ref="restAuthenticationEntryPoint">
@@ -22,22 +22,22 @@
         <form-login login-processing-url="/api/login"
                     username-parameter="username"
                     password-parameter="password"
-                    authentication-success-handler-ref="SuccesHandler"
+                    authentication-success-handler-ref="SuccessHandler"
                     authentication-failure-handler-ref="FailureHandler"/>
         <logout logout-url="/api/logout"
         success-handler-ref="logoutSuccessHandler"/>
     </http>
-    <beans:bean id="restAuthenticationEntryPoint" class="ru.originld.security.RestAuthenticationEntryPoint"/>
+    <beans:bean id="restAuthenticationEntryPoint" class="ru.originald.security.RestAuthenticationEntryPoint"/>
 
-    <beans:bean id="SuccesHandler" class="ru.originld.security.RestAuthenticationSuccessHandler"/>
-    <beans:bean id="FailureHandler" class="ru.originld.security.RestAuthenticationFailureHandler"/>
+    <beans:bean id="SuccessHandler" class="ru.originald.security.RestAuthenticationSuccessHandler"/>
+    <beans:bean id="FailureHandler" class="ru.originald.security.RestAuthenticationFailureHandler"/>
 
 
     <beans:bean id="logoutSuccessHandler"
-                class="ru.originld.security.RestLogoutSuccessHandler"/>
+                class="ru.originald.security.RestLogoutSuccessHandler"/>
 
     <beans:bean id="accessDeniedHandler"
-                class="ru.originld.security.RestAuthenticationAccessDeniedHandler"/>
+                class="ru.originald.security.RestAuthenticationAccessDeniedHandler"/>
 
     <beans:bean id="jdbcUserDetailsManager"
                 class="org.springframework.security.provisioning.JdbcUserDetailsManager"
@@ -53,13 +53,13 @@
         <!--<beans:property name="authenticationManager" ref="authenticationManager"/>-->
     </beans:bean>
 
-    <beans:bean id="bcrypt"
+    <beans:bean id="BCrypt"
                 class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
         <beans:constructor-arg name="strength" value="10"/>
     </beans:bean>
 
 
-    <beans:bean id="preauthAuthProvider"
+    <beans:bean id="preAuthAuthProvider"
                 class="org.springframework.security.web.authentication.preauth.PreAuthenticatedAuthenticationProvider">
         <beans:property name="preAuthenticatedUserDetailsService">
             <beans:bean class="org.springframework.security.core.userdetails.UserDetailsByNameServiceWrapper">
@@ -72,7 +72,7 @@
     <!-- Authentication manager -->
     <authentication-manager alias="authenticationManager">
         <authentication-provider user-service-ref="jdbcUserDetailsManager">
-            <password-encoder ref="bcrypt"/>
+            <password-encoder ref="BCrypt"/>
         </authentication-provider>
     </authentication-manager>
 

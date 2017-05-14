@@ -21,9 +21,9 @@
 
 
     <context:annotation-config/>
-    <context:component-scan base-package="ru.originld.controller"/>
-    <context:component-scan base-package="ru.originld.service"/>
-    <context:component-scan base-package="ru.originld.aspects"/>
+    <context:component-scan base-package="ru.originald.controller"/>
+    <context:component-scan base-package="ru.originald.service"/>
+    <context:component-scan base-package="ru.originald.aspects"/>
     <aop:aspectj-autoproxy/>
 
     <import resource="security.xml"/>
