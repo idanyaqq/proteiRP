@@ -9,8 +9,8 @@ import java.util.List;
  */
 public interface UserGroupService {
 
-    List<UserGroup> findByUserGroupId(long id);
-    List<UserGroup> findByName(String name);
+    UserGroup findByGroupId(long id);
+    UserGroup findByGroupName(String name);
     List<UserGroup> findByUserId(long userId);
     List<UserGroup> getAllUsersGroupAndUsers();
 }

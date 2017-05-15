@@ -27,9 +27,9 @@ public class UserGroupController {
 
     @RequestMapping(value = "users/group/fbgi/{userGroupId}",method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<List<UserGroup>> findByUserGroupId(@PathVariable("userGroupId")long id){
+    public ResponseEntity<UserGroup> findByUserGroupId(@PathVariable("userGroupId")long id){
         try {
-            List<UserGroup> userGroupsList = userGroupService.findByUserGroupId(id);
+            UserGroup userGroupsList = userGroupService.findByGroupId(id);
             return new ResponseEntity<>(userGroupsList, HttpStatus.OK);
         } catch (ObjectNotFoundException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -38,9 +38,9 @@ public class UserGroupController {
 
     @RequestMapping(value = "users/group/fbgn/{groupName}", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<List<UserGroup>> findByName(@PathVariable("groupName") String groupName){
+    public ResponseEntity<UserGroup> findByGroupName(@PathVariable("groupName") String groupName){
         try {
-            List<UserGroup> userGroupsList = userGroupService.findByName(groupName);
+            UserGroup userGroupsList = userGroupService.findByGroupName(groupName);
             return new ResponseEntity<>(userGroupsList, HttpStatus.OK);
         } catch (ObjectNotFoundException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

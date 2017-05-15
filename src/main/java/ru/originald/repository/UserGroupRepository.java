@@ -11,16 +11,18 @@ import java.util.List;
  */
 public interface UserGroupRepository extends JpaRepository<UserGroup,Long> {
 
-    List<UserGroup> findById(long id);
+    @Query(value = "SELECT ug FROM UserGroup ug LEFT JOIN FETCH ug.userList WHERE ug.id=?1")
+    UserGroup findById(long id);
 
-    List<UserGroup> findByName(String name);
+    @Query(value = "SELECT ug FROM UserGroup ug LEFT JOIN FETCH ug.userList WHERE ug.name=?1")
+    UserGroup findByName(String name);
 
     @Query(value = "SELECT * FROM users_to_users_group LEFT JOIN users_group on group_id = id where user_id =?1", nativeQuery = true)
-    List<UserGroup> findByUserId( long userId);
+    List<UserGroup> findByUserId(long userId);
 
-    @Query(value = "SELECT * FROM users_to_users_group LEFT join FETCH users_group on group_id=id",nativeQuery = true)
-//    @Query(value = "SELECT ug FROM UserGroup ug LEFT JOIN FETCH ug.userList LEFT JOIN FETCH ")
+    @Query(value = "SELECT DISTINCT ug FROM UserGroup ug LEFT JOIN FETCH ug.userList")
     List<UserGroup> getAllGroupsAndUsers();
+
 
 
 }

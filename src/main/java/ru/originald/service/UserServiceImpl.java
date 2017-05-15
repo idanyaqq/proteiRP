@@ -56,7 +56,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findByIdWithCompany(Long id) {
-        return userRepository.findByIdWithoutDeepInfo(id);
+        return userRepository.findByIdWithCompany(id);
+    }
+
+    @Override
+    public User findByIdWithFullInfo(Long id) {
+        return userRepository.findByIdWithFullInfo(id);
     }
 
     @Override

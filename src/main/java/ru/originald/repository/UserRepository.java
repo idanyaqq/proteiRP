@@ -14,29 +14,42 @@ import java.util.List;
  */
 public interface UserRepository extends JpaRepository<User,Long> {
 
-    @Query(value = "select u from User u LEFT JOIN FETCH u.company")
+    @Query(value = "select * from users", nativeQuery = true)
     List<User> findAll();
 
+    @Query(value = "select u FROM User u " +
+            "LEFT JOIN FETCH u.company " +
+            "LEFT JOIN FETCH u.userGroupForUserUsings " +
+            "LEFT JOIN FETCH u.passport where u.username=:username")
     User findByUsername(@Param("username") String username);
 
-    @Query(value = "SELECT u FROM User u LEFT JOIN FETCH u.company WHERE u.id=:id")
+    @Query(value = "SELECT u FROM User u WHERE u.id=?1")
     User findByIdWithoutDeepInfo(@Param("id") Long id);
+
+    @Query(value = "SELECT u FROM User u LEFT JOIN FETCH u.company WHERE u.id=?1")
+    User findByIdWithCompany(@Param("id")Long id);
+
+    @Query(value = "SELECT u FROM User u " +
+            "LEFT JOIN FETCH u.company " +
+            "LEFT JOIN FETCH u.userGroupForUserUsings " +
+            "LEFT JOIN FETCH u.passport WHERE u.id=?1")
+    User findByIdWithFullInfo(@Param("id") Long id);
 
     @Modifying
     @Transactional
     @Query(value = "UPDATE users SET status=:status WHERE id=:id",nativeQuery = true)
     void updateStatus(@Param("id") Long id, @Param("status") boolean status);
 
-    @Query(value = "SELECT u FROM User u LEFT JOIN FETCH u.company WHERE u.company.name =:company_name")
-//    @Query(value = "SELECT u FROM User u LEFT JOIN Company c ON u.company.id =c.id WHERE c.name =: company_name")
+    @Query(value = "SELECT u FROM User u WHERE u.company.name = ?1")
     List<User> findUsersByCompany(@Param("company_name")String company_name);
 
-    @Query(value = "SELECT u FROM User u LEFT JOIN FETCH u.company WHERE u.passport.number =:passport_number")
+    @Query(value = "SELECT u FROM User u WHERE u.passport.number =:passport_number")
     User findByPassportNumber(@Param("passport_number") Long passportNumber);
 
     @Modifying
     @Transactional
     @Query(value = "UPDATE users SET username=?1, email=?2, phone=?3,status=?4 WHERE id = ?5",nativeQuery = true)
     void editUserById(String username, String email, long phone,boolean status,long id);
+
 
 }

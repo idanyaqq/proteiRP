@@ -41,38 +41,50 @@ public class UserController {
         userService.saveUser(user);
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setLocation(uriComponentsBuilder.path("/users/{id}").buildAndExpand(user.getId()).toUri());
-        return new ResponseEntity<Void>(httpHeaders, HttpStatus.CREATED);
+        return new ResponseEntity<>(httpHeaders, HttpStatus.CREATED);
     }
 
     @RequestMapping(value = "users/{username}",method = RequestMethod.GET)
     public ResponseEntity<User> findUserByUsername(@PathVariable(value = "username") String userName){
         try {
             User user = userService.findByUsername(userName);
-            return new ResponseEntity<User>(user, HttpStatus.OK);
+            return new ResponseEntity<>(user, HttpStatus.OK);
         } catch (ObjectNotFoundException e) {
-            return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
     //Find User by Id without deep info
-    @RequestMapping(value = "/users/WDI/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/users/UDI/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<User> getUserInfo(@PathVariable("id") Long id) throws Exception {
+    public ResponseEntity<User> getUserWithoutDeepInfo(@PathVariable("id") Long id) throws Exception {
         try {
             User user = userService.findByIdWithoutDeepInfo(id);
-            return new ResponseEntity<User>(user, HttpStatus.OK);
+            return new ResponseEntity<>(user, HttpStatus.OK);
         } catch (ObjectNotFoundException e) {
-            return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+
+    @RequestMapping(value = "users/UFI/{id}",method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity<User> getUserWithFullInfo(@PathVariable("id")Long id){
+        try {
+            User user = userService.findByIdWithFullInfo(id);
+            return new ResponseEntity<>(user, HttpStatus.OK);
+        } catch (ObjectNotFoundException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
     @RequestMapping(value = "/users/UWC/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<User> getUserInfo2(@PathVariable("id") Long id) throws Exception {
+    public ResponseEntity<User> getUserWithCompanyInfo(@PathVariable("id") Long id) throws Exception {
         try {
             User user = userService.findByIdWithCompany(id);
-            return new ResponseEntity<User>(user, HttpStatus.OK);
+            return new ResponseEntity<>(user, HttpStatus.OK);
         } catch (ObjectNotFoundException e) {
-            return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
@@ -87,9 +99,9 @@ public class UserController {
             httpHeaders.setUpgrade("previousStatus=" + (currentStatus ? "online" : "offline")
                     + ",CurrentStatus=" + (updatedStatus ? "online" : "offline"));
 
-            return new ResponseEntity<Void>(httpHeaders, HttpStatus.OK);
+            return new ResponseEntity<>(httpHeaders, HttpStatus.OK);
         } catch (ObjectNotFoundException e) {
-            return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
@@ -98,9 +110,9 @@ public class UserController {
                                                @RequestParam("newPassword") String newPassword) {
         try {
             userService.changeOwnPassword(currentPassword, newPassword);
-            return new ResponseEntity<Void>(HttpStatus.OK);
+            return new ResponseEntity<>(HttpStatus.OK);
         } catch (Exception e) {
-            return new ResponseEntity<Void>(HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
 
@@ -109,9 +121,9 @@ public class UserController {
     public ResponseEntity<List<User>> findAll() {
         List<User> userList = userService.findAll();
         if (userList != null && !userList.isEmpty()) {
-            return new ResponseEntity<List<User>>(userList, HttpStatus.OK);
+            return new ResponseEntity<>(userList, HttpStatus.OK);
         } else {
-            return new ResponseEntity<List<User>>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
@@ -119,6 +131,6 @@ public class UserController {
 
     public ResponseEntity<Void> editUser(@ModelAttribute("user") User user, @PathVariable("id") long id) {
         userService.editUserById(user, id);
-        return new ResponseEntity<Void>(HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

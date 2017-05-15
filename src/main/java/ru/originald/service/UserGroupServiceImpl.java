@@ -16,12 +16,12 @@ public class UserGroupServiceImpl implements UserGroupService {
     private UserGroupRepository userGroupRepository;
 
     @Override
-    public List<UserGroup> findByUserGroupId(long id) {
+    public UserGroup findByGroupId(long id) {
         return userGroupRepository.findById(id);
     }
 
     @Override
-    public List<UserGroup> findByName(String name) {
+    public UserGroup findByGroupName(String name) {
         return userGroupRepository.findByName(name);
     }
 

@@ -19,6 +19,11 @@
         </mvc:message-converters>
     </mvc:annotation-driven>
 
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/pages"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
 
     <context:annotation-config/>
     <context:component-scan base-package="ru.originald.controller"/>

@@ -12,10 +12,11 @@ public interface UserService {
     User saveUser(User user);
     User findByIdWithoutDeepInfo(Long id);
     User findByIdWithCompany(Long id);
+    User findByIdWithFullInfo(Long id);
     User findByUsername(String username);
     void getStatus(Long id, boolean status);
     List<User> findUserByCompany(String companyName);
-    User findByPassportNumber(long passportNubmer);
+    User findByPassportNumber(long passportNumber);
     void changeOwnPassword(String currentPassword,String newPassword);
     void editUserById(User user,long id);
 }
